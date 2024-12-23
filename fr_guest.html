@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فرم مهمان</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+
+<style>
+@font-face {
+  font-family: fnt;
+  src: url(/fonts/IRANSansWeb\(FaNum\).woff);
+}
+@font-face {
+  font-family: b-fnt;
+  src: url(/fonts/IRANSansWeb\(FaNum\)_Bold.woff);
+}
+@font-face {
+  font-family: l-fnt;
+  src: url(/fonts/IRANSansWeb\(FaNum\)_Light.woff);
+}
+@font-face {
+  font-family: u-fnt;
+  src: url(/fonts/IRANSansWeb\(FaNum\)_UltraLight.woff);
+}
+
+.fnt {
+  font-family: fnt;
+  font-size: medium;
+}
+/* تنظیمات عمومی */
+body {
+  text-align: right;
+  background-color: #505050; /* رنگ پس‌زمینه کل صفحه: مشکی */
+  color: #ffffff; /* رنگ متن: سفید */
+  font-family: b-fnt;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* استایل فرم */
+#guestForm {
+  background-color: #1c1c1c; /* پس‌زمینه فرم: خاکستری تیره */
+  border: 5px solid #ff4d4d; /* حاشیه فرم: قرمز */
+  border-radius: 15px; /* گوشه‌های گرد */
+  padding: 20px; /* فاصله داخلی فرم */
+}
+
+/* عنوان فرم */
+#guestForm h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: #ff4d4d; /* رنگ متن عنوان */
+  border-bottom: 2px solid #f32424; /* خط زیر عنوان */
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+/* استایل فیلدهای فرم */
+#guestForm .form-row label {
+  font-size: 0.9rem;
+  color: #c72626;
+  text-align: right;
+  margin-bottom: 7px;
+}
+
+#guestForm .form-row input,
+#guestForm .form-row select,
+#guestForm .form-row textarea {
+  background-color: #f2f2f2; /* پس‌زمینه فیلدها */
+  color: #000000; /* رنگ متن داخل فیلد */
+  border: 1px solid #8f8f8f; /* حاشیه فیلد */
+  border-radius: 7px; /* گوشه‌های گرد فیلد */
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 5px; /* فاصله بین فیلدها */
+}
+
+#guestForm .form-row input:focus,
+#guestForm .form-row select:focus,
+#guestForm .form-row textarea:focus {
+  border-color: #ff4d4d; /* رنگ حاشیه در حالت فوکوس */
+  box-shadow: 0 0 10px #ff4d4d; /* سایه قرمز */
+}
+
+/* استایل دکمه‌ها */
+button {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+button#bt_add_pers {
+  border: 2px solid #0d5807; /* دکمه اضافه کردن مهمان */
+  background-color: transparent;
+  color: #2a8e00;
+}
+
+button#bt_add_pers:hover {
+  background-color: #379e1b; /* پس‌زمینه خاکستری تیره */
+  color: #ffffff; /* رنگ متن قرمز */
+  border-color: #298310; /* حاشیه قرمز */
+}
+
+button#bt_sendx {
+  background-color: #ff4d4d; /* پس‌زمینه دکمه ارسال */
+  color: #fff;
+  border: 2px solid #ff4d4d;
+}
+
+button#bt_sendx:hover {
+  background-color: #e60000; /* قرمز تیره‌تر در حالت هاور */
+  border-color: #ff4d4d;
+}
+
+  /* موبایل */
+  @media (max-width: 768px) {
+    form {
+      padding: 20px;
+    }
+    
+    form h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
+    </style>
+</head>
+<body>
+  <div class="container mt-5" dir="rtl">
+    <div id="guestForm" class="p-4 border rounded bg-light shadow">
+        
+
+            <div class="col-12"> <h2 class=" mb-4 text-danger">فرم مهمان</h2> </div>
+           
+        <!-- نام شرکت -->
+        <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="companyName">نام شرکت / سازمان</label>
+            </div>
+            <div class="col-9">
+                <input type="text" id="shk"  class="form-control" placeholder="نام شرکت را وارد کنید">
+            </div>
+        </div>
+
+        <!-- نوع ورود -->
+        <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="vrd_typ">نوع ورود</label>
+            </div>
+            <div class="col-9">
+                <select id="vrd_typ" class="form-control">
+                    <option value="0"></option>
+                    <option value="1">با خودرو</option>
+                    <option value="2">بدون خودرو</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- نوع حضور -->
+        <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="prs_typ">نوع حضور</label>
+            </div>
+            <div class="col-9">
+                <select id="prs_typ"  class="form-control">
+                    <option value="0"></option>
+                    <option value="1">مهمان</option>
+                    <option value="2">شخصی</option>
+                    <option value="3">غیره</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- تاریخ ورود -->
+        <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label>تاریخ ورود</label>
+            </div>
+            <div class="col-3">
+                <select class="form-control" id="dy" >
+                   
+                </select>
+            </div>
+            <div class="col-3">
+                <select class="form-control" id="mnt">
+                
+                </select>
+            </div>
+            <div class="col-3">
+                <select class="form-control" id="yr" >
+                    <option value="0"></option>
+                    <option value="1403">1403</option>
+                    <option value="1404">1404</option>
+                    <option value="1405">1405</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- مدت اقامت -->
+        <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="qt_dy">مدت اقامت (روز)</label>
+            </div>
+            <div class="col-9">
+                <input type="number" id="qt_dy"  class="form-control" min="1" placeholder="مدت اقامت">
+            </div>
+        </div>
+
+        <!-- تعداد میهمان -->
+        <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="qt_gst">تعداد مهمان</label>
+            </div>
+            <div class="col-9">
+                <input type="number" id="qt_gst"  class="form-control" min="1" placeholder="تعداد مهمان">
+            </div>
+        </div>
+
+        <!-- نیاز به اسکان -->
+        <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="esk">نیاز به اسکان</label>
+            </div>
+            <div class="col-9">
+                <select id="esk"  class="form-control">
+                    <option value="0"></option>
+                    <option value="no">خیر</option>
+                    <option value="yes">بله</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- امور / اداره میزبان -->
+        <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="omr">امور/اداره میزبان</label>
+            </div>
+            <div class="col-9">
+                <select id="omr"  class="form-control">
+                    <option value="0"></option>
+                    <option value="it">امور فناوری اطلاعات</option>
+                    <option value="tadarokat">امور تدارکات</option>
+                    <option value="ravabetomumi">روابط عمومی</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- شیوه پذیرایی -->
+        <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="vip">نوع پذیرایی</label>
+            </div>
+            <div class="col-9">
+                <select id="vip"  class="form-control">
+                    <option value="0"></option>
+                    <option value="1">عادی</option>
+                    <option value="2">ویژه</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- علت حضور -->
+         <div class="form-row align-item-center mb-3">
+            <div class="col-3">
+                <label for="des">علت حضور/توضیحات تکمیلی</label>
+            </div>
+            <div class="col-9">
+                <textarea id="des"  class="form-control" rows="3" placeholder="علت حضور را وارد کنید"></textarea>
+            </div>
+         </div>
+
+
+        <!-- دکمه ارسال -->
+        <div class="form-row">
+            <div class="col-6">
+                <button class="btn btn-block" id="bt_add_pers">اضافه کردن مهمان</button>
+            </div>
+            <div class="col-6">
+                <button  class="btn btn-block" id="bt_sendx">ارسال</button>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<script>
+  function collect_data(){
+
+        let shk = $('#shk').val();
+        let vrd_typ = $('#vrd_typ').val();
+        let prs_typ = $('#prs_typ').val();
+        let dy = $('#dy').val();
+        let mnt = $('#mnt').val();
+        let yr = $('#yr').val();
+        let qt_dy = $('#qt_dy').val();
+        let qt_gst = $('#qt_gst').val();
+        let esk = $('#esk').val();
+        let omr = $('#omr').val();
+        let vip = $('#vip').val();
+        let des = $('#des').val(); 
+         
+        if(
+            shk=='' || 
+            prs_typ==0 || 
+            dy==0 || 
+            mnt==0 || 
+            yr==0 || 
+            qt_dy=='' || 
+            qt_gst=='' || 
+            esk==0 || 
+            omr==0 || 
+            vip==0 || 
+            vrd_typ==0 || 
+            des=='')
+         {
+            alert('فرم را به طور کامل تکمیل کنید');return 0;
+         }
+        
+
+
+        var dat=yr.toString()+mnt.toString()+dy.toString();
+
+
+        var sx={shk:shk,vrd_typ:vrd_typ,prs_typ:prs_typ,dat:dat,qt_dy:qt_dy,qt_gst:qt_gst,esk:esk,omr:omr,vip:vip,des:des};
+        var sy=JSON.stringify(sx);
+        return sy;
+    }
+
+    $('#bt_sendx').on('click',function(){
+        var data=collect_data();
+        $.post('/sendx',
+        {
+            data:data
+        },
+        function(b){});
+    });
+</script>
+        <!-- loop for the month and day -->
+<script>
+    $(document).ready(function () {
+        function add_day() {
+            let menuOptions ='<option value="0"></option>';
+            for (let i = 1; i <= 31; i++) {
+                menuOptions += "<option value='" + num(i) + "'>" + num(i) + "</option>";
+            }
+            return menuOptions;
+        }
+
+        function add_month() {
+            let menuOptions ='<option value="0"></option>';
+            for (let i = 1; i <= 12; i++) {
+                menuOptions += "<option value='" + num(i) + "'>" + num(i) + "</option>";
+            }
+            return menuOptions;
+        }
+
+        function num(n) {
+            return n < 10 ? '0' + n : n;
+        }
+
+        $('#dy').append(add_day());
+        $('#mnt').append(add_month());
+    });
+    
+</script>
+
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فرم مهمان</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+
+<style>
+@font-face {
+  font-family: fnt;
+  src: url(/fonts/IRANSansWeb\(FaNum\).woff);
+}
+@font-face {
+  font-family: b-fnt;
+  src: url(/fonts/IRANSansWeb\(FaNum\)_Bold.woff);
+}
+@font-face {
+  font-family: l-fnt;
+  src: url(/fonts/IRANSansWeb\(FaNum\)_Light.woff);
+}
+@font-face {
+  font-family: u-fnt;
+  src: url(/fonts/IRANSansWeb\(FaNum\)_UltraLight.woff);
+}
+
+.fnt {
+  font-family: fnt;
+  font-size: medium;
+}
+/* تنظیمات عمومی */
+body {
+  text-align: right;
+  background-color: #505050; /* رنگ پس‌زمینه کل صفحه: مشکی */
+  color: #ffffff; /* رنگ متن: سفید */
+  font-family: b-fnt;
+}
+
+.profile-container {
+            background-color: #777777;
+            color: #f0f0f0;
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-bottom: 1rem;
+        }
+
+        .profile-container img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-left: 1rem;
+        }
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* استایل فرم */
+#niazfrd {
+  background-color: #1c1c1c; /* پس‌زمینه فرم: خاکستری تیره */
+  border: 5px solid #ff4d4d; /* حاشیه فرم: قرمز */
+  border-radius: 15px; /* گوشه‌های گرد */
+  padding: 20px; /* فاصله داخلی فرم */
+}
+
+/* عنوان فرم */
+#niazfrd h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: #ff4d4d; /* رنگ متن عنوان */
+  border-bottom: 2px solid #f32424; /* خط زیر عنوان */
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+/* استایل فیلدهای فرم */
+#niazfrd .form-row label {
+  font-size: 0.9rem;
+  color: #c72626;
+  text-align: right;
+  margin-bottom: 7px;
+}
+
+#niazfrd .form-row input,
+#niazfrd .form-row select,
+#niazfrd .form-row textarea {
+  background-color: #f2f2f2; /* پس‌زمینه فیلدها */
+  color: #000000; /* رنگ متن داخل فیلد */
+  border: 1px solid #8f8f8f; /* حاشیه فیلد */
+  border-radius: 7px; /* گوشه‌های گرد فیلد */
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 5px; /* فاصله بین فیلدها */
+}
+
+#niazfrd .form-row input:focus,
+#niazfrd .form-row select:focus,
+#niazfrd .form-row textarea:focus {
+  border-color: #ff4d4d; /* رنگ حاشیه در حالت فوکوس */
+  box-shadow: 0 0 10px #ff4d4d; /* سایه قرمز */
+}
+
+/* استایل دکمه‌ها */
+button {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+button#bt_add_pers {
+  border: 2px solid #0d5807; /* دکمه اضافه کردن مهمان */
+  background-color: transparent;
+  color: #2a8e00;
+}
+
+button#bt_add_pers:hover {
+  background-color: #379e1b; /* پس‌زمینه خاکستری تیره */
+  color: #ffffff; /* رنگ متن قرمز */
+  border-color: #298310; /* حاشیه قرمز */
+}
+
+button#bt_sendx {
+  background-color: #ff4d4d; /* پس‌زمینه دکمه ارسال */
+  color: #fff;
+  border: 2px solid #ff4d4d;
+}
+
+button#bt_sendx:hover {
+  background-color: #e60000; /* قرمز تیره‌تر در حالت هاور */
+  border-color: #ff4d4d;
+}
+
+  /* موبایل */
+  @media (max-width: 768px) {
+    form {
+      padding: 20px;
+    }
+    
+    form h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
+    </style>
+</head>
+<body>
+    <!-- قسمت پروفایل -->
+    <div class="container mt-4">
+        <div class="profile-container">
+            <div>
+                <h4>نام کاربر</h4>
+                <p>شماره شناسایی: 123456</p>
+            </div>
+            <img src="icons/usericon.png" alt="Profile Picture">
+        </div>
+    </div>
+
+
+  <div class="container mt-5" dir="rtl">
+    <div id="niazfrd" class="p-4 border rounded bg-light shadow">
+        
+
+            <div class="col-12"> <h2 class=" mb-4 text-danger">فرم نیازسنجی سازمانی</h2> </div>
+           
+        <!-- عنوان نیاز آموزشی -->
+        <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="companyName">عنوان نیاز آموزشی</label>
+            </div>
+            <div class="col-9">
+                <input type="text" id="onvn-niaz"  class="form-control" placeholder="">
+            </div>
+        </div>
+
+         <!-- اولویت نیاز آموزشی -->
+         <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="olaviat_niaz">اولویت نیاز آموزشی</label>
+            </div>
+            <div class="col-9">
+                <select id="olaviat_niaz"  class="form-control">
+                    <option value="0"></option>
+                    <option value="1">کم</option>
+                    <option value="2">متوسط</option>
+                    <option value="3">زیاد</option>
+                </select>
+            </div>
+        </div>
+
+         <!-- علت نیاز آموزشی -->
+         <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="companyName">علت نیاز آموزشی</label>
+            </div>
+            <div class="col-9">
+                <input type="text" id="elt-niaz"  class="form-control" placeholder="">
+            </div>
+        </div>
+
+        <!-- سطح نیاز آموزشی -->
+        <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="sat_niaz">سطح نیاز آموزشی</label>
+            </div>
+            <div class="col-9">
+                <select id="sat_niaz" class="form-control">
+                    <option value="0"></option>
+                    <option value="1">مقدماتی</option>
+                    <option value="2">متوسطه</option>
+                    <option value="3">پیشرفته</option>
+
+                </select>
+            </div>
+        </div>
+
+        <!-- انتظارات پس از اتمام دوره -->
+        <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="companyName">انتظارات پس از اتمام دوره</label>
+            </div>
+            <div class="col-9">
+                <input type="text" id="elt-niaz"  class="form-control" placeholder="">
+            </div>
+        </div>
+
+       
+        <!-- سرفصل های مدنظر -->
+        <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="companyName">سرفصل های مدنظر</label>
+            </div>
+            <div class="col-9">
+                <input type="text" id="elt-niaz"  class="form-control" placeholder="">
+            </div>
+        </div>
+
+        <!-- شغل یا مشاغل گروه هدف -->
+        <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="companyName">شغل یا مشاغل گروه هدف</label>
+            </div>
+            <div class="col-9">
+                <input type="text" id="elt-niaz"  class="form-control" placeholder="">
+            </div>
+        </div>
+
+         <!-- تعداد افراد گروه هدف -->
+         <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="qt_dy">تعداد افراد گروه هدف</label>
+            </div>
+            <div class="col-9">
+                <input type="number" id="qt_dy"  class="form-control" min="1" placeholder="">
+            </div>
+        </div>
+
+        <!-- اسامی کارکنان مدنظر -->
+        <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="companyName">اسامی کارکنان مدنظر</label>
+            </div>
+            <div class="col-9">
+                <input type="text" id="elt-niaz"  class="form-control" placeholder="">
+            </div>
+        </div>
+       
+        <!-- توضیحات تکمیلی -->
+         <div class="form-row align-item-center mb-3">
+            <div class="col-3">
+                <label for="des">توضیحات تکمیلی</label>
+            </div>
+            <div class="col-9">
+                <textarea id="des"  class="form-control" rows="3" placeholder=""></textarea>
+            </div>
+         </div>
+
+
+        <!-- دکمه ارسال -->
+        <div class="form-row">
+            <div class="col-12">
+                <button  class="btn btn-block" id="bt_sendx">ارسال</button>
+            </div>
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فرم مهمان</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+
+<style>
+@font-face {
+  font-family: fnt;
+  src: url(/fonts/IRANSansWeb\(FaNum\).woff);
+}
+@font-face {
+  font-family: b-fnt;
+  src: url(/fonts/IRANSansWeb\(FaNum\)_Bold.woff);
+}
+@font-face {
+  font-family: l-fnt;
+  src: url(/fonts/IRANSansWeb\(FaNum\)_Light.woff);
+}
+@font-face {
+  font-family: u-fnt;
+  src: url(/fonts/IRANSansWeb\(FaNum\)_UltraLight.woff);
+}
+
+.fnt {
+  font-family: fnt;
+  font-size: medium;
+}
+/* تنظیمات عمومی */
+body {
+  text-align: right;
+  background-color: #505050; /* رنگ پس‌زمینه کل صفحه: مشکی */
+  color: #ffffff; /* رنگ متن: سفید */
+  font-family: b-fnt;
+}
+
+.profile-container {
+            background-color: #777777;
+            color: #f0f0f0;
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-bottom: 1rem;
+        }
+
+        .profile-container img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-left: 1rem;
+        }
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* استایل فرم */
+#niazfrd {
+  background-color: #1c1c1c; /* پس‌زمینه فرم: خاکستری تیره */
+  border: 5px solid #ff4d4d; /* حاشیه فرم: قرمز */
+  border-radius: 15px; /* گوشه‌های گرد */
+  padding: 20px; /* فاصله داخلی فرم */
+}
+
+/* عنوان فرم */
+#niazfrd h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: #ff4d4d; /* رنگ متن عنوان */
+  border-bottom: 2px solid #f32424; /* خط زیر عنوان */
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+/* استایل فیلدهای فرم */
+#niazfrd .form-row label {
+  font-size: 0.9rem;
+  color: #c72626;
+  text-align: right;
+  margin-bottom: 7px;
+}
+
+#niazfrd .form-row input,
+#niazfrd .form-row select,
+#niazfrd .form-row textarea {
+  background-color: #f2f2f2; /* پس‌زمینه فیلدها */
+  color: #000000; /* رنگ متن داخل فیلد */
+  border: 1px solid #8f8f8f; /* حاشیه فیلد */
+  border-radius: 7px; /* گوشه‌های گرد فیلد */
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 5px; /* فاصله بین فیلدها */
+}
+
+#niazfrd .form-row input:focus,
+#niazfrd .form-row select:focus,
+#niazfrd .form-row textarea:focus {
+  border-color: #ff4d4d; /* رنگ حاشیه در حالت فوکوس */
+  box-shadow: 0 0 10px #ff4d4d; /* سایه قرمز */
+}
+
+/* استایل دکمه‌ها */
+button {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+button#bt_add_pers {
+  border: 2px solid #0d5807; /* دکمه اضافه کردن مهمان */
+  background-color: transparent;
+  color: #2a8e00;
+}
+
+button#bt_add_pers:hover {
+  background-color: #379e1b; /* پس‌زمینه خاکستری تیره */
+  color: #ffffff; /* رنگ متن قرمز */
+  border-color: #298310; /* حاشیه قرمز */
+}
+
+button#bt_sendx {
+  background-color: #ff4d4d; /* پس‌زمینه دکمه ارسال */
+  color: #fff;
+  border: 2px solid #ff4d4d;
+}
+
+button#bt_sendx:hover {
+  background-color: #e60000; /* قرمز تیره‌تر در حالت هاور */
+  border-color: #ff4d4d;
+}
+
+  /* موبایل */
+  @media (max-width: 768px) {
+    form {
+      padding: 20px;
+    }
+    
+    form h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
+    </style>
+</head>
+<body>
+    <!-- قسمت پروفایل -->
+    <div class="container mt-4">
+        <div class="profile-container">
+            <div>
+                <h4>نام کاربر</h4>
+                <p>شماره شناسایی: 123456</p>
+            </div>
+            <img src="icons/usericon.png" alt="Profile Picture">
+        </div>
+    </div>
+
+
+  <div class="container mt-5" dir="rtl">
+    <div id="niazfrd" class="p-4 border rounded bg-light shadow">
+        
+
+            <div class="col-12"> <h2 class=" mb-4 text-danger">فرم ثبت ضامن</h2> </div>
+        <!-- ثبت کد شناسایی -->
+        <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="companyName">شماره شناسایی</label>
+            </div>
+            <div class="col-9">
+                <input type="text" id="onvn-niaz"  class="form-control" placeholder="">
+            </div>
+        </div>
+
+        <!-- نام و نام‌خانوادگی وام گیرنده -->
+        <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="companyName">نام و نام‌خانوادگی وام‌گیرنده</label>
+            </div>
+            <div class="col-9">
+                <input type="text" id="onvn-niaz"  class="form-control" placeholder="">
+            </div>
+        </div>
+            
+        <!-- نام پدر وام‌گیرنده -->
+        <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="companyName">نام و نام‌خانوادگی ضامن</label>
+            </div>
+            <div class="col-9">
+                <input type="text" id="onvn-niaz"  class="form-control" placeholder="">
+            </div>
+        </div>
+
+         <!-- نام و نام‌خانوادگی ضامن -->
+         <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="companyName">نام و نام‌خانوادگی ضامن</label>
+            </div>
+            <div class="col-9">
+                <input type="text" id="onvn-niaz"  class="form-control" placeholder="">
+            </div>
+        </div>
+
+         <!-- کد ملی ضامن -->
+         <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="companyName">کدملی ضامن</label>
+            </div>
+            <div class="col-9">
+                <input type="text" id="onvn-niaz"  class="form-control" placeholder="">
+            </div>
+        </div>
+
+         <!-- نام پدر ضامن -->
+         <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="companyName">نام پدر ضامن</label>
+            </div>
+            <div class="col-9">
+                <input type="text" id="onvn-niaz"  class="form-control" placeholder="">
+            </div>
+        </div>
+
+         <!-- محل صدور شناسنامه ضامن -->
+         <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="companyName">صادره</label>
+            </div>
+            <div class="col-9">
+                <input type="text" id="onvn-niaz"  class="form-control" placeholder="">
+            </div>
+        </div>
+
+         
+        <!-- تاریخ تولد ضامن -->
+        <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label>متولد</label>
+            </div>
+            <div class="col-3">
+                <select class="form-control" id="dy" >
+                   
+                </select>
+            </div>
+            <div class="col-3">
+                <select class="form-control" id="mnt">
+                
+                </select>
+            </div>
+            <div class="col-3">
+                   <input type="number" id="yr">
+            </div>
+        </div>
+
+
+         <!-- نسبت وام‌گیرنده با ضامن -->
+         <div class="form-row align-items-center mb-3">
+            <div class="col-3">
+                <label for="companyName">نسبت وام‌گیرنده با ضامن</label>
+            </div>
+            <div class="col-9">
+                <input type="text" id="elt-niaz"  class="form-control" placeholder="">
+            </div>
+        </div>
+
+        
+
+        <!-- دکمه ارسال -->
+        <div class="form-row">
+            <div class="col-12">
+                <button  class="btn btn-block" id="bt_sendx">ارسال</button>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+
+ <!-- loop for the month and day -->
+ <script>
+    $(document).ready(function () {
+        function add_day() {
+            let menuOptions ='<option value="0"></option>';
+            for (let i = 1; i <= 31; i++) {
+                menuOptions += "<option value='" + num(i) + "'>" + num(i) + "</option>";
+            }
+            return menuOptions;
+        }
+
+        function add_month() {
+            let menuOptions ='<option value="0"></option>';
+            for (let i = 1; i <= 12; i++) {
+                menuOptions += "<option value='" + num(i) + "'>" + num(i) + "</option>";
+            }
+            return menuOptions;
+        }
+
+        function num(n) {
+            return n < 10 ? '0' + n : n;
+        }
+
+        $('#dy').append(add_day());
+        $('#mnt').append(add_month());
+    });
+    
+</script>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سامانه پرسنلی واگن پارس مپنا</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        @font-face {
+            font-family: "fnt";
+            src: url(fonts/IRANSansWeb.woff);
+        }
+
+        @font-face {
+            font-family: "fnt-b";
+            src: url(fonts/IRANSansWeb_Bold.woff);
+        }
+
+        body {
+            background-color: #9e9e9e;
+            color: #f0f0f0;
+            font-family: 'fnt-b';
+        }
+
+       header {
+             background-color: #C4161C !important;
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             padding: 10px;
+        }
+
+        header .header-title {
+            flex-grow: 1;
+            text-align: center;
+            margin: 0;
+        }
+
+        header .header-logo {
+            max-width: 90px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+    header .header-title {
+        font-size: 2rem; /* Adjust font size for tablets */
+    }
+        }
+
+        @media (max-width: 480px) {
+    header .header-title {
+        font-size: 1.5rem; /* Adjust font size for mobile phones */
+    }
+        }
+
+
+
+        .btn-custom {
+            background-color: #ffffff;
+            color: #C4161C;
+            border: 5px;
+            border-color: #C4161C;
+            border-radius: 8px;
+            transition: background-color 0.2s ease-in;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .btn-custom img {
+            width: 30px;
+            height: 30px;
+            margin-right: 8px;
+            margin-left: 0;
+        }
+
+        .btn-custom:hover {
+            background-color: #c70101;
+            color: #f0f0f0;
+        }
+
+        footer {
+            padding: 1rem 0;
+            text-align: center;
+            background-color: #424242;
+            color: #f0f0f0;
+        }
+
+        .container h2 {
+            color: #d32f2f;
+        }
+
+        .profile-container {
+            background-color: #777777;
+            color: #f0f0f0;
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-bottom: 1rem;
+        }
+
+        .profile-container img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-left: 1rem;
+        }
+
+        .info-bar {
+            background-color: #333333;
+            color: #f0f0f0;
+            padding: 0.5rem;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            direction: rtl;
+        }
+
+        .dropdown-menu {
+            background-color: #424242;
+        }
+
+        .dropdown-menu a {
+            color: #f4f0f0 !important;
+        }
+
+        .dropdown-menu :hover {
+            color: #b71c1c;
+        }
+    </style>
+</head>
+<body>
+
+
+   <!-- Header -->
+<header class="py-4">
+    <h1 class="header-title text-white">سامانه پرسنلی واگن پارس</h1>
+    <img class="header-logo" src="/logo/white-wp.png" alt="wp-logo">
+</header>
+
+
+    <!-- Profile Section -->
+    <div class="container mt-4">
+        <div class="profile-container">
+            <div>
+                <h4>نام کاربر</h4>
+                <p>شماره شناسایی: 123456</p>
+            </div>
+            <img src="icons/usericon.png" alt="Profile Picture">
+        </div>
+
+        <!-- Info Bar -->
+        <div class="info-bar">
+            <div id="current-date">تاریخ امروز: 1402/10/26</div>
+            <div class="dropdown">
+                <button class="btn btn-custom" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                    <img src="icons/hamburgerbtn.png" alt="Items">
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="fr_change_password.html">تغییر رمز عبور</a></li>
+                    <li><a class="dropdown-item" href="#">مورد دوم</a></li>
+                    <li><a class="dropdown-item" href="#">مورد سوم</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Buttons -->
+        <div class="d-flex flex-column align-items-center mt-4">
+            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='https://172.30.207.200/account/login'">
+                <span>کارت ساعت (ETS)</span>
+                <img src="icons/time-tracking.png" alt="ETS Icon">
+            </button>
+
+            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_rep_nfs_pers.html'">
+                <span>نظام پیشنهادات</span>
+                <img src="icons/suggestion.png" alt="Suggestions Icon">
+            </button>
+
+            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_rep_nfs_pers.html'">
+                <span>نفرساعت جذب شده</span>
+                <img src="icons/time-management.png" alt="Hours Icon">
+            </button>
+
+            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_fish_sel.html'">
+                <span>فیش حقوقی</span>
+                <img src="icons/checking.png" alt="Salary Icon">
+            </button>
+
+            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_kasr.html'">
+                <span>گواهی کسر از حقوق</span>
+                <img src="icons/time-tracking.png" alt="#">
+            </button>
+
+
+            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_niaz.html'">
+                <span>نیاز سنجی</span>
+                <img src="icons/employees.png" alt="Insurance Icon">
+            </button>
+
+            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_mosaede.html'">
+                <span>درخواست مساعده</span>
+                <img src="icons/hand.png" alt="Request Icon">
+            </button>
+
+            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_car.html'">
+                <span>درخواست خودرو</span>
+                <img src="icons/sedan.png" alt="Car Icon">
+            </button>
+
+            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_guest.html'">
+                <span>فرم مهمان</span>
+                <img src="icons/contact-list.png" alt="Guest Icon">
+            </button>
+
+            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_exam.html'">
+                <span>شرکت در آزمون</span>
+                <img src="icons/exam.png" alt="Exam Icon">
+            </button>
+
+            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_date.html'">
+                <span>تنظیم تاریخ</span>
+                <img src="icons/calendar.png" alt="Date Icon">
+            </button>
+
+            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_change_password.html'">
+                <span>تغییر رمز</span>
+                <img src="icons/padlock.png" alt="Password Icon">
+            </button>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div>
+                <p>© 2024 سیستم مدیریت پرسنل واگن پارس مپنا</p>
+            </div>
+        </footer
