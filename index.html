@@ -24,12 +24,22 @@
         }
 
        header {
-             background-color: #C4161C !important;
-             display: flex;
-             justify-content: space-between;
-             align-items: center;
-             padding: 10px;
+        background-color: #C4161C !important;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        position: fixed; /* برای ثابت کردن هدر */
+        top: 0; /* در بالای صفحه */
+        left: 0;
+        width: 100%; /* پوشش کل عرض صفحه */
+        z-index: 1000; /* برای اطمینان از نمایش در بالاترین سطح */
         }
+
+        header.shadow {
+         box-shadow: 0px 12px 50px rgba(0, 0, 0, 0.8);
+        }   
+
 
         header .header-title {
             flex-grow: 1;
@@ -166,7 +176,7 @@
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li><a class="dropdown-item" href="fr_change_password.html">تغییر رمز عبور</a></li>
-                    <li><a class="dropdown-item" href="#">مورد دوم</a></li>
+                    <li><a class="dropdown-item" href="#">تنظیم تاریخ</a></li>
                     <li><a class="dropdown-item" href="#">مورد سوم</a></li>
                 </ul>
             </div>
@@ -174,7 +184,7 @@
 
         <!-- Main Buttons -->
         <div class="d-flex flex-column align-items-center mt-4">
-            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='https://172.30.207.200/account/login'">
+            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='https://ets.mapnawagonpars.com/'">
                 <span>کارت ساعت (ETS)</span>
                 <img src="icons/time-tracking.png" alt="ETS Icon">
             </button>
@@ -230,10 +240,6 @@
                 <img src="icons/calendar.png" alt="Date Icon">
             </button>
 
-            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_change_password.html'">
-                <span>تغییر رمز</span>
-                <img src="icons/padlock.png" alt="Password Icon">
-            </button>
         </div>
 
         <!-- Footer -->
@@ -241,4 +247,19 @@
             <div>
                 <p>© 2024 سیستم مدیریت پرسنل واگن پارس مپنا</p>
             </div>
-        </footer
+        </footer>
+    </div>
+    </body>
+    <script>
+
+        // For shadow effect under the header after scrolling
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 0) {
+                header.classList.add('shadow');
+            } else {
+                header.classList.remove('shadow');
+            }
+        });
+    </script>
+</html>

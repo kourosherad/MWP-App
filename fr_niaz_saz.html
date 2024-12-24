@@ -141,6 +141,48 @@ button#bt_sendx:hover {
   border-color: #ff4d4d;
 }
 
+.tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      border: 0px;
+      padding: 0px;
+      border-radius: 5px;
+      min-height: 40px;
+    }
+    .tag {
+      background-color: #b10000;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      margin: 5px;
+      display: flex;
+      align-items: center;
+    }
+    .tag span {
+      margin-right: 8px;
+    }
+    .tag button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .tag button:hover {
+      color: #ff4d4d;
+    }
+    .input-container {
+      flex: 1;
+      min-width: 150px;
+    }
+    .tag-input {
+      border: none;
+      outline: none;
+      width: 100%;
+      padding: 5px;
+      font-size: 14px;
+    }
+
   /* موبایل */
   @media (max-width: 768px) {
     form {
@@ -176,20 +218,20 @@ button#bt_sendx:hover {
         <!-- عنوان نیاز آموزشی -->
         <div class="form-row align-items-center mb-3">
             <div class="col-3">
-                <label for="companyName">عنوان نیاز آموزشی</label>
+                <label for="nam-nz">عنوان نیاز آموزشی</label>
             </div>
             <div class="col-9">
-                <input type="text" id="onvn-niaz"  class="form-control" placeholder="">
+                <input type="text" id="nam-nz"  class="form-control" placeholder="">
             </div>
         </div>
 
          <!-- اولویت نیاز آموزشی -->
          <div class="form-row align-items-center mb-3">
             <div class="col-3">
-                <label for="olaviat_niaz">اولویت نیاز آموزشی</label>
+                <label for="olv-nz">اولویت نیاز آموزشی</label>
             </div>
             <div class="col-9">
-                <select id="olaviat_niaz"  class="form-control">
+                <select id="olvt-nz"  class="form-control">
                     <option value="0"></option>
                     <option value="1">کم</option>
                     <option value="2">متوسط</option>
@@ -201,7 +243,7 @@ button#bt_sendx:hover {
          <!-- علت نیاز آموزشی -->
          <div class="form-row align-items-center mb-3">
             <div class="col-3">
-                <label for="companyName">علت نیاز آموزشی</label>
+                <label for="elt-nz">علت نیاز آموزشی</label>
             </div>
             <div class="col-9">
                 <input type="text" id="elt-niaz"  class="form-control" placeholder="">
@@ -211,10 +253,10 @@ button#bt_sendx:hover {
         <!-- سطح نیاز آموزشی -->
         <div class="form-row align-items-center mb-3">
             <div class="col-3">
-                <label for="sat_niaz">سطح نیاز آموزشی</label>
+                <label for="sath-nz">سطح نیاز آموزشی</label>
             </div>
             <div class="col-9">
-                <select id="sat_niaz" class="form-control">
+                <select id="sath-nz" class="form-control">
                     <option value="0"></option>
                     <option value="1">مقدماتی</option>
                     <option value="2">متوسطه</option>
@@ -227,7 +269,7 @@ button#bt_sendx:hover {
         <!-- انتظارات پس از اتمام دوره -->
         <div class="form-row align-items-center mb-3">
             <div class="col-3">
-                <label for="companyName">انتظارات پس از اتمام دوره</label>
+                <label for="entz">انتظارات پس از اتمام دوره</label>
             </div>
             <div class="col-9">
                 <input type="text" id="elt-niaz"  class="form-control" placeholder="">
@@ -247,12 +289,16 @@ button#bt_sendx:hover {
 
         <!-- شغل یا مشاغل گروه هدف -->
         <div class="form-row align-items-center mb-3">
-            <div class="col-3">
-                <label for="companyName">شغل یا مشاغل گروه هدف</label>
+          <div class="col-3">
+            <label for="companyName">مشاغل گروه هدف</label>
+          </div>
+          <div class="col-9">
+            <div class="tag-container" id="tagContainer">
+              <div class="input-container">
+                <input type="text" id="tagInput" class="form-control tag-input" placeholder="یک شغل وارد کنید..." />
+              </div>
             </div>
-            <div class="col-9">
-                <input type="text" id="elt-niaz"  class="form-control" placeholder="">
-            </div>
+          </div>
         </div>
 
          <!-- تعداد افراد گروه هدف -->
@@ -295,3 +341,40 @@ button#bt_sendx:hover {
         
     </div>
 </div>
+</body>
+
+<script>
+
+  $(document).ready(function () {
+    // مدیریت فیلد ورودی برای اضافه کردن تگ
+    $("#tagInput").on("keypress", function (e) {
+      if (e.key === "Enter" || e.keyCode === 13) {
+        e.preventDefault();
+
+        const tagText = $(this).val().trim();
+        if (tagText) {
+          // افزودن تگ جدید
+          const newTag = $(`
+            <div class="tag">
+              <span>${tagText}</span>
+              <button type="button" class="remove-tag">&times;</button>
+            </div>
+          `);
+
+          // حذف تگ
+          newTag.find(".remove-tag").click(function () {
+            newTag.remove();
+          });
+
+          // اضافه کردن به کانتینر
+          $("#tagContainer").prepend(newTag);
+
+          // پاک کردن ورودی
+          $(this).val("");
+        }
+      }
+    });
+  });
+</script>
+
+</html>
