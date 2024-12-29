@@ -2,12 +2,23 @@ let app = require('express')();
 let express = require('express');
 let http = require('http').createServer(app);
 let bodyParser = require('body-parser');
+let mysql = require('mysql');
 
 let path = require('path');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/"));
+
+var msc = mysql.createConnection({
+    host: "172.30.207.137",
+    user: "root",
+    password: "Aa@12345",
+    database: "mwp_app"
+  });
+
+  
 app.get("/",function(req,res){
+
     res.sendFile(__dirname + "/index.html");
 });
 
@@ -28,7 +39,20 @@ app.post('/sendx',function(req,res){
     let vip = dt.vip;
     let des = dt.des; 
 
-    console.log(data)
+    // SQL Commands to insert data into mehman table 
+    let sql = "insert into mehman(shk,vrd_typ,prs_type,dy,mnt,yr,qt_dy,qt_gst,esk,omr,vip,des) values('"+shk+"',"+vrd_typ+","+prs_typ;
+    sql = sql + ","+dy+","+mnt+","+yr+","+qt_dy+","+qt_gst+","+esk+",'"+omr+"',"+vip+",'"+des+"')";
+
+    let con=mysql.createConnection(msc);
+    con.connect();
+    con.query(sql,function(err,data){
+        if(err){
+            console.log(err);
+        }
+    });
+    con.end();
+
+
 });
 
 http.listen(4000);

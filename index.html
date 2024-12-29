@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سامانه پرسنلی واگن پارس مپنا</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @font-face {
             font-family: "fnt";
@@ -18,248 +17,132 @@
         }
 
         body {
-            background-color: #9e9e9e;
-            color: #f0f0f0;
             font-family: 'fnt-b';
-        }
-
-       header {
-        background-color: #C4161C !important;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-        position: fixed; /* برای ثابت کردن هدر */
-        top: 0; /* در بالای صفحه */
-        left: 0;
-        width: 100%; /* پوشش کل عرض صفحه */
-        z-index: 1000; /* برای اطمینان از نمایش در بالاترین سطح */
-        }
-
-        header.shadow {
-         box-shadow: 0px 12px 50px rgba(0, 0, 0, 0.8);
-        }   
-
-
-        header .header-title {
-            flex-grow: 1;
-            text-align: center;
-            margin: 0;
-        }
-
-        header .header-logo {
-            max-width: 90px;
-            height: auto;
-            margin-right: 15px;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-    header .header-title {
-        font-size: 2rem; /* Adjust font size for tablets */
-    }
-        }
-
-        @media (max-width: 480px) {
-    header .header-title {
-        font-size: 1.5rem; /* Adjust font size for mobile phones */
-    }
-        }
-
-
-
-        .btn-custom {
-            background-color: #ffffff;
-            color: #C4161C;
-            border: 5px;
-            border-color: #C4161C;
-            border-radius: 8px;
-            transition: background-color 0.2s ease-in;
-            padding: 12px 16px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-        }
-
-        .btn-custom img {
-            width: 30px;
-            height: 30px;
-            margin-right: 8px;
-            margin-left: 0;
-        }
-
-        .btn-custom:hover {
-            background-color: #c70101;
-            color: #f0f0f0;
-        }
-
-        footer {
-            padding: 1rem 0;
-            text-align: center;
-            background-color: #424242;
-            color: #f0f0f0;
-        }
-
-        .container h2 {
-            color: #d32f2f;
-        }
-
-        .profile-container {
-            background-color: #777777;
-            color: #f0f0f0;
-            padding: 1rem;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            margin-bottom: 1rem;
-        }
-
-        .profile-container img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-left: 1rem;
-        }
-
-        .info-bar {
-            background-color: #333333;
-            color: #f0f0f0;
-            padding: 0.5rem;
-            border-radius: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-            direction: rtl;
-        }
-
-        .dropdown-menu {
-            background-color: #424242;
-        }
-
-        .dropdown-menu a {
-            color: #f4f0f0 !important;
-        }
-
-        .dropdown-menu :hover {
-            color: #b71c1c;
         }
     </style>
 </head>
-<body>
-
-
-   <!-- Header -->
-<header class="py-4">
-    <h1 class="header-title text-white">سامانه پرسنلی واگن پارس</h1>
-    <img class="header-logo" src="/logo/white-wp.png" alt="wp-logo">
-</header>
-
+<body class="bg-gray-400 text-gray-100">
+    <!-- Header -->
+    <header class="bg-red-700 fixed top-0 left-0 w-full z-50 flex items-center py-2 px-4 shadow-lg">
+        <h1 class="text-center text-white text-xl flex-grow">سامانه پرسنلی واگن پارس</h1>
+        <img class="max-w-[90px] h-auto mr-4" src="/logo/white-wp.png" alt="wp-logo">
+    </header>
 
     <!-- Profile Section -->
-    <div class="container mt-4">
-        <div class="profile-container">
+    <div class="container mx-auto mt-20 p-4">
+        <div class="bg-gray-600 text-gray-100 p-4 rounded-lg flex items-center justify-end mb-4">
             <div>
-                <h4>نام کاربر</h4>
-                <p>شماره شناسایی: 123456</p>
+                <h4 class="text-lg">نام کاربر</h4>
+                <p class="text-sm">شماره شناسایی: 123456</p>
             </div>
-            <img src="icons/usericon.png" alt="Profile Picture">
+            <img class="w-16 h-16 rounded-full ml-4" src="icons/usericon.png" alt="Profile Picture">
         </div>
 
         <!-- Info Bar -->
-        <div class="info-bar">
+        <div class="bg-gray-800 text-gray-100 p-2 rounded-lg flex items-center justify-between mb-4">
             <div id="current-date">تاریخ امروز: 1402/10/26</div>
-            <div class="dropdown">
-                <button class="btn btn-custom" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                    <img src="icons/hamburgerbtn.png" alt="Items">
+            <div class="relative">
+                <button class="bg-white text-red-700 rounded-lg p-2 flex items-center justify-center">
+                    <img class="w-8 h-8" src="icons/hamburgerbtn.png" alt="Items">
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" href="fr_change_password.html">تغییر رمز عبور</a></li>
-                    <li><a class="dropdown-item" href="#">تنظیم تاریخ</a></li>
-                    <li><a class="dropdown-item" href="#">مورد سوم</a></li>
+                <ul class="absolute right-0 mt-2 bg-gray-700 rounded-lg text-gray-100 hidden group-hover:block">
+                    <li><a class="block px-4 py-2 hover:text-red-500" href="fr_change_password.html">تغییر رمز عبور</a></li>
+                    <li><a class="block px-4 py-2 hover:text-red-500" href="#">تنظیم تاریخ</a></li>
                 </ul>
             </div>
         </div>
 
         <!-- Main Buttons -->
-        <div class="d-flex flex-column align-items-center mt-4">
-            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='https://ets.mapnawagonpars.com/'">
-                <span>کارت ساعت (ETS)</span>
-                <img src="icons/time-tracking.png" alt="ETS Icon">
+        <div class="flex flex-col items-center">
+            <button
+                class="flex items-center justify-end w-full my-2 p-3 rounded-lg bg-white text-red-700 hover:bg-red-700 hover:text-white transition duration-200 ease-in-out"
+                onclick="location.href='https://ets.mapnawagonpars.com/'">
+                <span class="mr-2">کارت ساعت (ETS)</span>
+                <img class="w-8 h-8 ml-2" src="icons/time-tracking.png" alt="ETS Icon">
             </button>
 
-            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_rep_nfs_pers.html'">
-                <span>نظام پیشنهادات</span>
-                <img src="icons/suggestion.png" alt="Suggestions Icon">
+            <button
+                id="pishnahad_btn"
+                class="flex items-center justify-end w-full my-2 p-3 rounded-lg bg-white text-red-700 hover:bg-red-700 hover:text-white transition duration-200 ease-in-out"
+                onclick="location.href='fr_pishnahad.html'">
+                <span class="mr-2">نظام پیشنهادات</span>
+                <img class="w-8 h-8 ml-2" src="icons/suggestion.png" alt="Suggestions Icon">
             </button>
 
-            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_rep_nfs_pers.html'">
-                <span>نفرساعت جذب شده</span>
-                <img src="icons/time-management.png" alt="Hours Icon">
+            <button
+                class="flex items-center justify-end w-full my-2 p-3 rounded-lg bg-white text-red-700 hover:bg-red-700 hover:text-white transition duration-200 ease-in-out"
+                onclick="location.href='fr_rep_nfs_pers.html'">
+                <span class="mr-2">نفرساعت جذب شده</span>
+                <img class="w-8 h-8 ml-2" src="icons/time-management.png" alt="Hours Icon">
             </button>
 
-            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_fish_sel.html'">
-                <span>فیش حقوقی</span>
-                <img src="icons/checking.png" alt="Salary Icon">
+            <button
+                class="flex items-center justify-end w-full my-2 p-3 rounded-lg bg-white text-red-700 hover:bg-red-700 hover:text-white transition duration-200 ease-in-out"
+                onclick="location.href='fr_fish_sel.html'">
+                <span class="mr-2">فیش حقوقی</span>
+                <img class="w-8 h-8 ml-2" src="icons/checking.png" alt="Salary Icon">
             </button>
 
-            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_kasr.html'">
-                <span>گواهی کسر از حقوق</span>
-                <img src="icons/time-tracking.png" alt="#">
+            <button
+                class="flex items-center justify-end w-full my-2 p-3 rounded-lg bg-white text-red-700 hover:bg-red-700 hover:text-white transition duration-200 ease-in-out"
+                onclick="location.href='fr_kasr.html'">
+                <span class="mr-2">گواهی کسر از حقوق</span>
+                <img class="w-8 h-8 ml-2" src="icons/time-tracking.png" alt="#">
             </button>
 
-
-            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_niaz.html'">
-                <span>نیاز سنجی</span>
-                <img src="icons/employees.png" alt="Insurance Icon">
+            <button
+                class="flex items-center justify-end w-full my-2 p-3 rounded-lg bg-white text-red-700 hover:bg-red-700 hover:text-white transition duration-200 ease-in-out"
+                onclick="location.href='fr_niaz.html'">
+                <span class="mr-2">نیاز سنجی</span>
+                <img class="w-8 h-8 ml-2" src="icons/employees.png" alt="Insurance Icon">
             </button>
 
-            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_mosaede.html'">
-                <span>درخواست مساعده</span>
-                <img src="icons/hand.png" alt="Request Icon">
+            <button
+                class="flex items-center justify-end w-full my-2 p-3 rounded-lg bg-white text-red-700 hover:bg-red-700 hover:text-white transition duration-200 ease-in-out"
+                onclick="location.href='fr_mosaede.html'">
+                <span class="mr-2">درخواست مساعده</span>
+                <img class="w-8 h-8 ml-2" src="icons/hand.png" alt="Request Icon">
             </button>
 
-            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_car.html'">
-                <span>درخواست خودرو</span>
-                <img src="icons/sedan.png" alt="Car Icon">
+            <button
+                class="flex items-center justify-end w-full my-2 p-3 rounded-lg bg-white text-red-700 hover:bg-red-700 hover:text-white transition duration-200 ease-in-out"
+                onclick="location.href='fr_car.html'">
+                <span class="mr-2">درخواست خودرو</span>
+                <img class="w-8 h-8 ml-2" src="icons/sedan.png" alt="Car Icon">
             </button>
 
-            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_guest.html'">
-                <span>فرم مهمان</span>
-                <img src="icons/contact-list.png" alt="Guest Icon">
+            <button
+                class="flex items-center justify-end w-full my-2 p-3 rounded-lg bg-white text-red-700 hover:bg-red-700 hover:text-white transition duration-200 ease-in-out"
+                onclick="location.href='fr_guest.html'">
+                <span class="mr-2">فرم مهمان</span>
+                <img class="w-8 h-8 ml-2" src="icons/contact-list.png" alt="Guest Icon">
             </button>
 
-            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_exam.html'">
-                <span>شرکت در آزمون</span>
-                <img src="icons/exam.png" alt="Exam Icon">
-            </button>
-
-            <button class="btn btn-custom w-100 my-2 d-flex justify-content-between align-items-center flex-row-reverse" onclick="location.href='fr_date.html'">
-                <span>تنظیم تاریخ</span>
-                <img src="icons/calendar.png" alt="Date Icon">
+            <button
+                class="flex items-center justify-end w-full my-2 p-3 rounded-lg bg-white text-red-700 hover:bg-red-700 hover:text-white transition duration-200 ease-in-out"
+                onclick="location.href='fr_exam.html'">
+                <span class="mr-2">شرکت در آزمون</span>
+                <img class="w-8 h-8 ml-2" src="icons/exam.png" alt="Exam Icon">
             </button>
 
         </div>
 
         <!-- Footer -->
-        <footer>
-            <div>
-                <p>© 2024 سیستم مدیریت پرسنل واگن پارس مپنا</p>
-            </div>
+        <footer class="bg-gray-800 text-gray-100 text-center py-4 mt-4 rounded-lg">
+            <p>&copy; 2024 سیستم مدیریت پرسنل واگن پارس مپنا</p>
         </footer>
     </div>
-    </body>
-    <script>
+</body>
+<script>
+    // For shadow effect under the header after scrolling
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 0) {
+            header.classList.add('shadow-lg');
+        } else {
+            header.classList.remove('shadow-lg');
+        }
+    });
+</script>
 
-        // For shadow effect under the header after scrolling
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 0) {
-                header.classList.add('shadow');
-            } else {
-                header.classList.remove('shadow');
-            }
-        });
-    </script>
 </html>
