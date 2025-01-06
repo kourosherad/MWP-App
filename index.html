@@ -22,6 +22,7 @@
     </style>
 </head>
 <body class="bg-gray-400 text-gray-100">
+
     <!-- Header -->
     <header class="bg-red-700 fixed top-0 left-0 w-full z-50 flex items-center py-2 px-4 shadow-lg">
         <h1 class="text-center text-white text-xl flex-grow">سامانه پرسنلی واگن پارس</h1>
@@ -41,90 +42,69 @@
         <!-- Info Bar -->
         <div class="bg-gray-800 text-gray-100 p-2 rounded-lg flex items-center justify-between mb-4">
             <div id="current-date">تاریخ امروز: 1402/10/26</div>
-            <div class="relative">
+            <div class="relative group">
                 <button class="bg-white text-red-700 rounded-lg p-2 flex items-center justify-center">
                     <img class="w-8 h-8" src="icons/hamburgerbtn.png" alt="Items">
                 </button>
-                <ul class="absolute right-0 mt-2 bg-gray-700 rounded-lg text-gray-100 hidden group-hover:block">
-                    <li><a class="block px-4 py-2 hover:text-red-500" href="fr_change_password.html">تغییر رمز عبور</a></li>
-                    <li><a class="block px-4 py-2 hover:text-red-500" href="#">تنظیم تاریخ</a></li>
+                <ul class="">
+                    <!-- <li><a class="block px-8 hover:text-red-500" href="#">تغییر رمز عبور</a></li>
+                    <li><a class="block px-8 hover:text-red-500" href="#">تنظیم تاریخ</a></li> -->
                 </ul>
             </div>
         </div>
 
         <!-- Main Buttons -->
-        <div class="flex flex-col items-center">
-            <button
-                class="flex items-center justify-end w-full my-2 p-3 rounded-lg bg-white text-red-700 hover:bg-red-700 hover:text-white transition duration-200 ease-in-out"
-                onclick="location.href='https://ets.mapnawagonpars.com/'">
-                <span class="mr-2">کارت ساعت (ETS)</span>
+        <div class="flex flex-col items-center space-y-4" dir="rtl">
+            <!-- Generic Button Class -->
+            <button class="btn-main" onclick="location.href='https://ets.mapnawagonpars.com/'">
+                <span>کارت ساعت (ETS)</span>
                 <img class="w-8 h-8 ml-2" src="icons/time-tracking.png" alt="ETS Icon">
             </button>
 
-            <button
-                id="pishnahad_btn"
-                class="flex items-center justify-end w-full my-2 p-3 rounded-lg bg-white text-red-700 hover:bg-red-700 hover:text-white transition duration-200 ease-in-out"
-                onclick="location.href='fr_pishnahad.html'">
-                <span class="mr-2">نظام پیشنهادات</span>
+            <button class="btn-main" onclick="location.href='fr_pishnahad.html'">
+                <span>نظام پیشنهادات</span>
                 <img class="w-8 h-8 ml-2" src="icons/suggestion.png" alt="Suggestions Icon">
             </button>
 
-            <button
-                class="flex items-center justify-end w-full my-2 p-3 rounded-lg bg-white text-red-700 hover:bg-red-700 hover:text-white transition duration-200 ease-in-out"
-                onclick="location.href='fr_rep_nfs_pers.html'">
-                <span class="mr-2">نفرساعت جذب شده</span>
+            <button class="btn-main" onclick="location.href='fr_rep_nfs_pers.html'">
+                <span>نفرساعت جذب شده</span>
                 <img class="w-8 h-8 ml-2" src="icons/time-management.png" alt="Hours Icon">
             </button>
 
-            <button
-                class="flex items-center justify-end w-full my-2 p-3 rounded-lg bg-white text-red-700 hover:bg-red-700 hover:text-white transition duration-200 ease-in-out"
-                onclick="location.href='fr_fish_sel.html'">
-                <span class="mr-2">فیش حقوقی</span>
+            <button class="btn-main" onclick="location.href='fr_fish_sel.html'">
+                <span>فیش حقوقی</span>
                 <img class="w-8 h-8 ml-2" src="icons/checking.png" alt="Salary Icon">
             </button>
 
-            <button
-                class="flex items-center justify-end w-full my-2 p-3 rounded-lg bg-white text-red-700 hover:bg-red-700 hover:text-white transition duration-200 ease-in-out"
-                onclick="location.href='fr_kasr.html'">
-                <span class="mr-2">گواهی کسر از حقوق</span>
+            <button class="btn-main" onclick="location.href='fr_kasr.html'">
+                <span>گواهی کسر از حقوق</span>
                 <img class="w-8 h-8 ml-2" src="icons/time-tracking.png" alt="#">
             </button>
 
-            <button
-                class="flex items-center justify-end w-full my-2 p-3 rounded-lg bg-white text-red-700 hover:bg-red-700 hover:text-white transition duration-200 ease-in-out"
-                onclick="location.href='fr_niaz.html'">
-                <span class="mr-2">نیاز سنجی</span>
+            <button class="btn-main" onclick="location.href='fr_niaz.html'">
+                <span>نیاز سنجی</span>
                 <img class="w-8 h-8 ml-2" src="icons/employees.png" alt="Insurance Icon">
             </button>
 
-            <button
-                class="flex items-center justify-end w-full my-2 p-3 rounded-lg bg-white text-red-700 hover:bg-red-700 hover:text-white transition duration-200 ease-in-out"
-                onclick="location.href='fr_mosaede.html'">
-                <span class="mr-2">درخواست مساعده</span>
+            <button class="btn-main" onclick="location.href='fr_mosaede.html'">
+                <span>درخواست مساعده</span>
                 <img class="w-8 h-8 ml-2" src="icons/hand.png" alt="Request Icon">
             </button>
 
-            <button
-                class="flex items-center justify-end w-full my-2 p-3 rounded-lg bg-white text-red-700 hover:bg-red-700 hover:text-white transition duration-200 ease-in-out"
-                onclick="location.href='fr_car.html'">
-                <span class="mr-2">درخواست خودرو</span>
+            <button class="btn-main" onclick="location.href='fr_car.html'">
+                <span>درخواست خودرو</span>
                 <img class="w-8 h-8 ml-2" src="icons/sedan.png" alt="Car Icon">
             </button>
 
-            <button
-                class="flex items-center justify-end w-full my-2 p-3 rounded-lg bg-white text-red-700 hover:bg-red-700 hover:text-white transition duration-200 ease-in-out"
-                onclick="location.href='fr_guest.html'">
-                <span class="mr-2">فرم مهمان</span>
+            <button class="btn-main" onclick="location.href='fr_guest.html'">
+                <span>فرم مهمان</span>
                 <img class="w-8 h-8 ml-2" src="icons/contact-list.png" alt="Guest Icon">
             </button>
 
-            <button
-                class="flex items-center justify-end w-full my-2 p-3 rounded-lg bg-white text-red-700 hover:bg-red-700 hover:text-white transition duration-200 ease-in-out"
-                onclick="location.href='fr_exam.html'">
-                <span class="mr-2">شرکت در آزمون</span>
+            <button class="btn-main" onclick="location.href='fr_exam.html'">
+                <span>شرکت در آزمون</span>
                 <img class="w-8 h-8 ml-2" src="icons/exam.png" alt="Exam Icon">
             </button>
-
         </div>
 
         <!-- Footer -->
@@ -132,17 +112,38 @@
             <p>&copy; 2024 سیستم مدیریت پرسنل واگن پارس مپنا</p>
         </footer>
     </div>
-</body>
-<script>
-    // For shadow effect under the header after scrolling
-    const header = document.querySelector('header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 0) {
-            header.classList.add('shadow-lg');
-        } else {
-            header.classList.remove('shadow-lg');
-        }
-    });
-</script>
 
+    <style>
+        .btn-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            background-color: white;
+            color: #d31010;
+            border: 1px solid #b71c1c;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .btn-main:hover {
+            background-color: #b71c1c;
+            color: white;
+        }
+    </style>
+
+    <script>
+        // For shadow effect under the header after scrolling
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 0) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+
+</body>
 </html>
