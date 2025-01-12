@@ -3,245 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فرم مهمان</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-
-<style>
-@font-face {
-  font-family: fnt;
-  src: url(/fonts/IRANSansWeb\(FaNum\).woff);
-}
-@font-face {
-  font-family: b-fnt;
-  src: url(/fonts/IRANSansWeb\(FaNum\)_Bold.woff);
-}
-@font-face {
-  font-family: l-fnt;
-  src: url(/fonts/IRANSansWeb\(FaNum\)_Light.woff);
-}
-@font-face {
-  font-family: u-fnt;
-  src: url(/fonts/IRANSansWeb\(FaNum\)_UltraLight.woff);
-}
-
-.fnt {
-  font-family: fnt;
-  font-size: medium;
-}
-/* تنظیمات عمومی */
-body {
-  text-align: right;
-  background-color: #505050; /* رنگ پس‌زمینه کل صفحه: مشکی */
-  color: #ffffff; /* رنگ متن: سفید */
-  font-family: b-fnt;
-}
-
-.profile-container {
-            background-color: #777777;
-            color: #f0f0f0;
-            padding: 1rem;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            margin-bottom: 1rem;
+    <title>نیازسنجی فردی</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @font-face {
+            font-family: fnt;
+            src: url(/fonts/IRANSansWeb\(FaNum\).woff);
         }
-
-        .profile-container img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-left: 1rem;
+        @font-face {
+            font-family: b-fnt;
+            src: url(/fonts/IRANSansWeb\(FaNum\)_Bold.woff);
         }
-
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* استایل فرم */
-#niazfrd {
-  background-color: #1c1c1c; /* پس‌زمینه فرم: خاکستری تیره */
-  border: 5px solid #ff4d4d; /* حاشیه فرم: قرمز */
-  border-radius: 15px; /* گوشه‌های گرد */
-  padding: 20px; /* فاصله داخلی فرم */
-}
-
-/* عنوان فرم */
-#niazfrd h2 {
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-align: center;
-  color: #ff4d4d; /* رنگ متن عنوان */
-  border-bottom: 2px solid #f32424; /* خط زیر عنوان */
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-}
-
-/* استایل فیلدهای فرم */
-#niazfrd .form-row label {
-  font-size: 0.9rem;
-  color: #c72626;
-  text-align: right;
-  margin-bottom: 7px;
-}
-
-#niazfrd .form-row input,
-#niazfrd .form-row select,
-#niazfrd .form-row textarea {
-  background-color: #f2f2f2; /* پس‌زمینه فیلدها */
-  color: #000000; /* رنگ متن داخل فیلد */
-  border: 1px solid #8f8f8f; /* حاشیه فیلد */
-  border-radius: 7px; /* گوشه‌های گرد فیلد */
-  padding: 10px;
-  width: 100%;
-  margin-bottom: 5px; /* فاصله بین فیلدها */
-}
-
-#niazfrd .form-row input:focus,
-#niazfrd .form-row select:focus,
-#niazfrd .form-row textarea:focus {
-  border-color: #ff4d4d; /* رنگ حاشیه در حالت فوکوس */
-  box-shadow: 0 0 10px #ff4d4d; /* سایه قرمز */
-}
-
-/* استایل دکمه‌ها */
-button {
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 10px;
-  border-radius: 5px;
-  transition: all 0.3s ease-in-out;
-  width: 100%;
-}
-
-button#bt_add_pers {
-  border: 2px solid #0d5807; /* دکمه اضافه کردن مهمان */
-  background-color: transparent;
-  color: #2a8e00;
-}
-
-button#bt_add_pers:hover {
-  background-color: #379e1b; /* پس‌زمینه خاکستری تیره */
-  color: #ffffff; /* رنگ متن قرمز */
-  border-color: #298310; /* حاشیه قرمز */
-}
-
-button#bt_sendf {
-  background-color: #ff4d4d; /* پس‌زمینه دکمه ارسال */
-  color: #fff;
-  border: 2px solid #ff4d4d;
-}
-
-button#bt_sendf:hover {
-  background-color: #e60000; /* قرمز تیره‌تر در حالت هاور */
-  border-color: #ff4d4d;
-}
-
-  /* موبایل */
-  @media (max-width: 768px) {
-    form {
-      padding: 20px;
-    }
-    
-    form h2 {
-      font-size: 1.5rem;
-    }
-  }
-  
+        @font-face {
+            font-family: l-fnt;
+            src: url(/fonts/IRANSansWeb\(FaNum\)_Light.woff);
+        }
+        @font-face {
+            font-family: u-fnt;
+            src: url(/fonts/IRANSansWeb\(FaNum\)_UltraLight.woff);
+        }
+        body {
+            font-family: b-fnt;
+        }
     </style>
 </head>
-<body>
+<body class="bg-neutral-600 text-white font-b-fnt">
+
     <!-- Profile Section -->
-    <div class="container mt-4">
-        <div class="profile-container">
-            <div>
-                <h4>نام کاربر</h4>
-                <p>شماره شناسایی: 123456</p>
-            </div>
-            <img src="icons/usericon.png" alt="Profile Picture">
+    <div class="container mx-auto mt-4 px-4 sm:px-6 md:px-8">
+      <div class="flex items-center justify-end bg-neutral-400 text-gray-100 p-4 rounded-lg mb-4">
+        <div>
+          <h4 class="text-lg font-bold">نام کاربر</h4>
+          <p class="text-sm">شماره شناسایی: 123456</p>
         </div>
+        <img src="icons/usericon.png" alt="Profile Picture" class="w-16 h-16 rounded-full ml-4">
+      </div>
     </div>
 
+    <div class="container mx-auto mt-10 px-4" dir="rtl">
+        <div class="bg-white text-white p-6 rounded-lg shadow-lg border-4 border-red-600">
+            <h2 class="text-2xl font-bold text-red-500 border-b-2 border-red-400 pb-3 mb-6 text-center">فرم نیازسنجی فردی</h2>
 
-  <div class="container mt-5" dir="rtl">
-    <div id="niazfrd" class="p-4 border rounded bg-light shadow">
-        
+            <!-- عنوان نیاز آموزشی -->
+            <div class="mb-4">
+                <label for="onvn-nz" class="text-red-500 text-sm block mb-2">عنوان نیاز آموزشی</label>
+                <input type="text" id="onvn-nz" class="w-full bg-white text-black border border-red-500 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-red-500">
+            </div>
 
-            <div class="col-12"> <h2 class=" mb-4 text-danger">فرم نیازسنجی فردی</h2> </div>
-           
-        <!-- عنوان نیاز آموزشی -->
-        <div class="form-row align-items-center mb-3">
-            <div class="col-3">
-                <label for="nam-nz">عنوان نیاز آموزشی</label>
+            <!-- علت نیاز آموزشی -->
+            <div class="mb-4">
+                <label for="elt-nz" class="text-red-500 text-sm block mb-2">علت نیاز آموزشی</label>
+                <input type="text" id="elt-nz" class="w-full bg-white text-black border border-red-500 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-red-500">
             </div>
-            <div class="col-9">
-                <input type="text" id="onvn-nz"  class="form-control" placeholder="">
-            </div>
-        </div>
 
-         <!-- علت نیاز آموزشی -->
-         <div class="form-row align-items-center mb-3">
-            <div class="col-3">
-                <label for="elt-nz">علت نیاز آموزشی</label>
-            </div>
-            <div class="col-9">
-                <input type="text" id="elt-nz"  class="form-control" placeholder="">
-            </div>
-        </div>
-
-        <!-- سطح نیاز آموزشی -->
-        <div class="form-row align-items-center mb-3">
-            <div class="col-3">
-                <label for="sath-nz">سطح نیاز آموزشی</label>
-            </div>
-            <div class="col-9">
-                <select id="sath-nz" class="form-control">
+            <!-- سطح نیاز آموزشی -->
+            <div class="mb-4">
+                <label for="sath-nz" class="text-red-500 text-sm block mb-2">سطح نیاز آموزشی</label>
+                <select id="sath-nz" class="w-full bg-white text-black border border-red-500 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-red-500">
                     <option value="0"></option>
                     <option value="1">مقدماتی</option>
                     <option value="2">متوسطه</option>
                     <option value="3">پیشرفته</option>
-
                 </select>
             </div>
-        </div>
 
-        <!-- اولویت نیاز آموزشی -->
-        <div class="form-row align-items-center mb-3">
-            <div class="col-3">
-                <label for="olvt-nz">اولویت نیاز آموزشی</label>
-            </div>
-            <div class="col-9">
-                <select id="olvt-nz"  class="form-control">
+            <!-- اولویت نیاز آموزشی -->
+            <div class="mb-4">
+                <label for="olvt-nz" class="text-red-500 text-sm block mb-2">اولویت نیاز آموزشی</label>
+                <select id="olvt-nz" class="w-full bg-white text-black border border-red-500 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-red-500">
                     <option value="0"></option>
                     <option value="1">کم</option>
                     <option value="2">متوسط</option>
                     <option value="3">زیاد</option>
                 </select>
             </div>
-        </div>
 
-       
-        <!-- توضیحات تکمیلی -->
-         <div class="form-row align-item-center mb-3">
-            <div class="col-3">
-                <label for="des-nz">توضیحات تکمیلی</label>
+            <!-- توضیحات تکمیلی -->
+            <div class="mb-4">
+                <label for="des-nz" class="text-red-500 text-sm block mb-2">توضیحات تکمیلی</label>
+                <textarea id="des-nz" rows="3" class="w-full bg-white text-black border border-red-500 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-red-500"></textarea>
             </div>
-            <div class="col-9">
-                <textarea id="des-nz"  class="form-control" rows="3" placeholder=""></textarea>
-            </div>
-         </div>
 
-
-        <!-- دکمه ارسال -->
-        <div class="form-row">
-            <div class="col-12">
-                <button  class="btn btn-block" id="bt_sendf">ارسال</button>
+            <!-- دکمه ارسال -->
+            <div>
+                <button id="bt_sendf" class="w-full bg-red-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-700 transition">ارسال</button>
             </div>
         </div>
-        
     </div>
-</div>
+
+</body>
+</html>

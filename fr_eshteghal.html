@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,10 +16,12 @@
         font-family: 'fnt';
         src: url('/fonts/IRANSansWeb(FaNum).woff');
       }
+
       @font-face {
         font-family: 'b-fnt';
         src: url('/fonts/IRANSansWeb(FaNum)_Bold.woff');
       }
+
       @font-face {
         font-family: 'l-fnt';
         src: url('/fonts/IRANSansWeb(FaNum)_Light.woff');
@@ -30,11 +33,12 @@
     }
   </style>
 </head>
-<body class="bg-gray-600 text-white text-right">
+
+<body class="bg-neutral-600 text-white text-right">
 
   <!-- قسمت پروفایل -->
   <div class="container mx-auto mt-4 px-4 sm:px-6 md:px-8">
-    <div class="flex items-center justify-end bg-gray-500 text-gray-100 p-4 rounded-lg mb-4">
+    <div class="flex items-center justify-end bg-neutral-400 text-gray-100 p-4 rounded-lg mb-4">
       <div>
         <h4 class="text-lg font-bold">نام کاربر</h4>
         <p class="text-sm">شماره شناسایی: 123456</p>
@@ -51,33 +55,38 @@
       </h2>
 
       <!-- نام و نام‌خانوادگی متقاضی -->
-      <div class="mb-4 grid grid-cols-5 items-center gap-4">
-        <label for="onvn-niaz" class="text-sm text-red-600">نام و نام‌خانوادگی متقاضی</label>
-        <input type="text" id="onvn-niaz" class="col-span-4 bg-gray-300 text-black p-3 rounded-lg focus:ring focus:ring-red-500 border border-red-500">
+      <div class="mb-4">
+        <label for="nam" class="text-xs text-red-600 block mb-2">نام و نام‌خانوادگی متقاضی</label>
+        <input type="text" id="nam"
+          class="w-full bg-gray-100 text-black p-3 rounded-lg focus:ring focus:ring-red-500 border border-red-500">
       </div>
 
       <!-- شماره شناسایی -->
-      <div class="mb-4 grid grid-cols-5 items-center gap-4">
-        <label for="onvn-niaz" class="text-sm text-red-600">شماره شناسایی</label>
-        <input type="text" id="onvn-niaz" class="col-span-4 bg-gray-300 text-black p-3 rounded-lg focus:ring focus:ring-red-500 border border-red-500">
+      <div class="mb-4">
+        <label for="sheasaei" class="text-xs text-red-600 block mb-2">شماره شناسایی</label>
+        <input type="text" id="sheasaei"
+          class="w-full bg-gray-100 text-black p-3 rounded-lg focus:ring focus:ring-red-500 border border-red-500">
       </div>
 
       <!-- جهت ارائه به بانک -->
-      <div class="mb-4 grid grid-cols-5 items-center gap-4">
-        <label for="onvn-niaz" class="text-sm text-red-600">جهت ارائه به بانک</label>
-        <input type="text" id="onvn-niaz" class="col-span-4 bg-gray-300 text-black p-3 rounded-lg focus:ring focus:ring-red-500 border border-red-500">
+      <div class="mb-4">
+        <label for="nam-bank" class="text-xs text-red-600 block mb-2">جهت ارائه به بانک</label>
+        <input type="text" id="nam-bank"
+          class="w-full bg-gray-100 text-black p-3 rounded-lg focus:ring focus:ring-red-500 border border-red-500">
       </div>
 
       <!-- نام شعبه -->
-      <div class="mb-4 grid grid-cols-5 items-center gap-4">
-        <label for="onvn-niaz" class="text-sm text-red-600">نام شعبه</label>
-        <input type="text" id="onvn-niaz" class="col-span-4 bg-gray-300 text-black p-3 rounded-lg focus:ring focus:ring-red-600 border border-red-500">
+      <div class="mb-4">
+        <label for="nam-shobeh" class="text-xs text-red-600 block mb-2">نام شعبه</label>
+        <input type="text" id="nam-shobeh"
+          class="w-full bg-gray-100 text-black p-3 rounded-lg focus:ring focus:ring-red-600 border border-red-500">
       </div>
 
       <!-- مبلغ وام -->
-      <div class="mb-4 grid grid-cols-5 items-center gap-4">
-        <label for="onvn-niaz" class="text-sm text-red-600">مبلغ وام (ریال)</label>
-        <input type="text" id="onvn-niaz" class="col-span-4 bg-gray-300 text-black p-3 rounded-lg focus:ring focus:ring-red-500 border border-red-500">
+      <div class="mb-4">
+        <label for="mablaq" class="text-xs text-red-600 block mb-2">مبلغ وام (ریال)</label>
+        <input type="text" id="mablaq"
+          class="w-full bg-gray-100 text-black p-3 rounded-lg focus:ring focus:ring-red-500 border border-red-500">
       </div>
 
       <!-- دکمه ارسال -->
@@ -90,4 +99,5 @@
   </div>
 
 </body>
+
 </html>

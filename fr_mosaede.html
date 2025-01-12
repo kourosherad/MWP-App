@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فرم درخواست مساعده</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @font-face {
+            font-family: fnt;
+            src: url(/fonts/IRANSansWeb\(FaNum\).woff);
+        }
+
+        @font-face {
+            font-family: b-fnt;
+            src: url(/fonts/IRANSansWeb\(FaNum\)_Bold.woff);
+        }
+
+        @font-face {
+            font-family: l-fnt;
+            src: url(/fonts/IRANSansWeb\(FaNum\)_Light.woff);
+        }
+
+        @font-face {
+            font-family: u-fnt;
+            src: url(/fonts/IRANSansWeb\(FaNum\)_UltraLight.woff);
+        }
+
+        body {
+            font-family: b-fnt;
+        }
+    </style>
+</head>
+
+<body class="bg-neutral-600 text-white font-b-fnt">
+
+    <!-- Profile Section -->
+    <div class="container mx-auto mt-4 px-4 sm:px-6 md:px-8">
+        <div class="flex items-center justify-end bg-neutral-400 text-gray-100 p-4 rounded-lg mb-4">
+            <div>
+                <h4 class="text-lg font-bold">نام کاربر</h4>
+                <p class="text-sm">شماره شناسایی: 123456</p>
+            </div>
+            <img src="icons/usericon.png" alt="Profile Picture" class="w-16 h-16 rounded-full ml-4">
+        </div>
+    </div>
+
+    <div class="container mx-auto mt-10 px-4" dir="rtl">
+        <div class="bg-white text-white p-6 rounded-lg shadow-lg border-4 border-red-600">
+            <h2 class="text-2xl font-bold text-red-500 border-b-2 border-red-400 pb-3 mb-6 text-center">فرم درخواست
+                مساعده</h2>
+
+
+            <!-- ماه مورد نظر -->
+            <div class="mb-4">
+                <label for="mnt-mosaede" class="text-red-500 text-sm block mb-2">ماه</label>
+                <select id="mnt-mosaede"
+                    class="w-full bg-white text-black border border-red-500 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-red-500">
+                    <option value="0"></option>
+                    <option value="1">فروردین</option>
+                    <option value="2">اردیبهشت</option>
+                    <option value="3">خرداد</option>
+                    <option value="4">تیر</option>
+                    <option value="5">مرداد</option>
+                    <option value="6">شهریور</option>
+                    <option value="7">پاییز</option>
+                    <option value="8">آبان</option>
+                    <option value="9">آذر</option>
+                    <option value="10">دی</option>
+                    <option value="11">بهمن</option>
+                    <option value="12">اسفند</option>
+                </select>
+            </div>
+            <!-- سال مورد نظر-->
+            <div class="mb-4">
+                <label for="yr-mosaede" class="text-red-500 text-sm block mb-2">سال</label>
+                <select id="yr-mosaede"
+                    class="w-full bg-white text-black border border-red-500 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-red-500">
+                    <option value="0"></option>
+                    <option value="1">1403</option>
+                    <option value="2">1404</option>
+                    <option value="3">1405</option>
+                </select>
+            </div>
+            <!-- مبلغ مورد نظر-->
+            <div class="mb-4">
+                <label for="mablq-mosaede" class="text-red-500 text-sm block mb-2">مبلغ درخواستی</label>
+                <select id="mablq-mosaede"
+                    class="w-full bg-white text-black border border-red-500 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-red-500">
+                    <option value="0"></option>
+                    <option value="1">1,000,000 تومان</option>
+                    <option value="2">2,000,000 تومان</option>
+                    <option value="3">5,000,000 تومان</option>
+                </select>
+            </div>
+
+
+            <!-- دکمه ارسال -->
+            <div>
+                <button id="bt_sendf"
+                    class="w-full bg-red-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-700 transition">ارسال</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
