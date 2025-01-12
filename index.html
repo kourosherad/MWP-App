@@ -43,13 +43,21 @@
         <div class="bg-gray-800 text-gray-100 p-2 rounded-lg flex items-center justify-between mb-4">
             <div id="current-date">تاریخ امروز: 1402/10/26</div>
             <div class="relative group">
-                <button class="bg-white text-red-700 rounded-lg p-2 flex items-center justify-center">
+                <button id="menu-btn" class="bg-white text-red-700 rounded-lg p-2 flex items-center justify-center">
                     <img class="w-8 h-8" src="icons/hamburgerbtn.png" alt="Items">
                 </button>
-                <ul class="">
-                    <!-- <li><a class="block px-8 hover:text-red-500" href="#">تغییر رمز عبور</a></li>
-                    <li><a class="block px-8 hover:text-red-500" href="#">تنظیم تاریخ</a></li> -->
-                </ul>
+                <ul id="menu" class="hidden mt-2 absolute right-0 bg-white text-gray-800 rounded-lg shadow-lg p-2 w-40">
+                    <li class="flex items-center">
+                      <a class="block w-full px-4 py-2 hover:text-red-500" href="#">تغییر رمز عبور</a>
+                    </li>
+                    <li class="flex items-center">
+                      <a class="block w-full px-4 py-2 hover:text-red-500" href="#">تنظیم تاریخ</a>
+                    </li>
+                  </ul>
+                  
+                  
+                  
+                  
             </div>
         </div>
 
@@ -71,7 +79,7 @@
                 <img class="w-8 h-8 ml-2" src="icons/time-management.png" alt="Hours Icon">
             </button>
 
-            <button class="btn-main" onclick="location.href='fr_fish_sel.html'">
+            <button class="btn-main" onclick="location.href='fr_fish.html'">
                 <span>فیش حقوقی</span>
                 <img class="w-8 h-8 ml-2" src="icons/checking.png" alt="Salary Icon">
             </button>
@@ -142,6 +150,14 @@
             } else {
                 header.classList.remove('shadow-lg');
             }
+        });
+
+        // Hamburger Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
         });
     </script>
 

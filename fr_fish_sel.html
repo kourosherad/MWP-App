@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>جدول</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @layer base {
+        @font-face {
+            font-family: 'fnt';
+            src: url('/fonts/IRANSansWeb(FaNum).woff');
+        }
+
+        @font-face {
+            font-family: 'b-fnt';
+            src: url('/MWP-App/fonts/IRANSansWeb\(FaNum\)_Bold.woff');
+        }
+
+        @font-face {
+            font-family: 'l-fnt';
+            src: url('/fonts/IRANSansWeb(FaNum)_Light.woff');
+        }
+    }
+
+    body {
+        font-family: 'b-fnt', sans-serif;
+    }
+</style>
+</head>
+<body class="bg-neutral-600 text-white font-b-fnt">
+
+  <div class="max-w-4xl mx-auto bg-white text-black shadow-md rounded-lg overflow-hidden mt-4 p-4">
+    <table class="w-full border-collapse border border-gray-200 text-sm">
+      <thead>
+        <tr class="bg-neutral-400 text-gray-100">
+          <th class="border border-gray-200 p-2">سال</th>
+          <th class="border border-gray-200 p-2">ماه</th>
+          <th class="border border-gray-200 p-2">کد پرسنلی</th>
+          <th class="border border-gray-200 p-2">نام</th>
+          <th class="border border-gray-200 p-2">نام خانوادگی</th>
+          <th class="border border-gray-200 p-2">کارکرد موثر</th>
+          <th class="border border-gray-200 p-2">مانده مرخصی</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border border-gray-200 p-2">سال</td>
+          <td class="border border-gray-200 p-2">ماه</td>
+          <td class="border border-gray-200 p-2">کدپرسنلی</td>
+          <td class="border border-gray-200 p-2">نام</td>
+          <td class="border border-gray-200 p-2">نام خانوادگی</td>
+          <td class="border border-gray-200 p-2">کارکرد موثر</td>
+          <td class="border border-gray-200 p-2">کارکرد مرخصی</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div class="mt-4">
+      <h2 class="text-lg font-bold text-red-500 border-b-2 border-red-400 pb-3 mb-6 text-right">پرداخت‌ها</h2>
+      <table class="w-full border-collapse border border-gray-200 text-sm">
+        <tbody>
+          <tr>
+            <td class="border border-gray-200 p-2">فوق‌العاده مسکن</td>
+            <td class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">حقوق مبنا</td>
+            <td class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">جمع مزایا</td>
+            <td class="border border-gray-200 p-2">0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-4">
+      <h2 class="text-lg font-bold text-red-500 border-b-2 border-red-400 pb-3 mb-6 text-right">کسورات</h2>
+      <table class="w-full border-collapse border border-gray-200 text-sm">
+        <tbody>
+          <tr>
+            <td class="border border-gray-200 p-2">بیمه تامین اجتماعی</td>
+            <td class="border border-gray-200 p-2">8,452,936</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">مالیات</td>
+            <td class="border border-gray-200 p-2">3,656,219</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">جمع کسور</td>
+            <td class="border border-gray-200 p-2">17,479,155</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-4 p-4 bg-gray-100 text-right">
+      <strong class="text-red-500">خالص پرداختی:</strong>
+      <span>108,584,602</span>
+    </div>
+  </div>
+
+</body>
+</html>
