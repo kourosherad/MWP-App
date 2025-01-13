@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فیش عیدی</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @layer base {
+      @font-face {
+        font-family: 'fnt';
+        src: url('/fonts/IRANSansWeb(FaNum).woff');
+      }
+
+      @font-face {
+        font-family: 'b-fnt';
+        src: url('/fonts/IRANSansWeb\(FaNum\)_Bold.woff');
+      }
+
+      @font-face {
+        font-family: 'l-fnt';
+        src: url('/fonts/IRANSansWeb(FaNum)_Light.woff');
+      }
+    }
+
+    input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+
+    body {
+      font-family: 'b-fnt', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-neutral-600 text-white font-b-fnt">
+
+  <div class="max-w-4xl mx-auto bg-white text-black shadow-md rounded-lg overflow-hidden mt-4 p-4">
+    <h2 class="text-lg font-bold text-red-500 border-b-2 border-red-400 pb-3 mb-6 text-right">مشخصات</h2>
+    <table class="w-full border-collapse border border-gray-200 text-sm">
+      <thead>
+        <tr class="bg-neutral-400 text-gray-100">
+          <th class="border border-gray-200 p-2">سال</th>
+          <th class="border border-gray-200 p-2">ماه</th>
+          <th class="border border-gray-200 p-2">کد پرسنلی</th>
+          <th class="border border-gray-200 p-2">نام</th>
+          <th class="border border-gray-200 p-2">نام خانوادگی</th>
+          <th class="border border-gray-200 p-2">کارکرد موثر</th>
+          <th class="border border-gray-200 p-2">مانده مرخصی</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border border-gray-200 p-2">سال</td>
+          <td class="border border-gray-200 p-2">ماه</td>
+          <td class="border border-gray-200 p-2">کدپرسنلی</td>
+          <td class="border border-gray-200 p-2">نام</td>
+          <td class="border border-gray-200 p-2">نام خانوادگی</td>
+          <td class="border border-gray-200 p-2">شماره حساب</td>
+          <td class="border border-gray-200 p-2">کارکرد موثر عیدی</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="mt-4">
+      <h2 class="text-lg font-bold text-red-500 border-b-2 border-red-400 pb-3 mb-6 text-right">کارکرد</h2>
+      <table class="w-full border-collapse border border-gray-200 text-sm">
+        <tbody>
+          <tr>
+            <td class="border border-gray-200 p-2">مبنای محاسبه عددی</td>
+            <td id="ezf-mzd" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">مزایا عیدی</td>
+            <td id="takhir" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">سقف عیدی</td>
+            <td id="qeybat" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">معافیت</td>
+            <td id="karkrd-ezf" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">مالیات عیدی</td>
+            <td id="karkrd-mrkhsi" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">خالص عیدی</td>
+            <td id="karkrd-22" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">مانده مرخصی</td>
+            <td id="kasr-mrkhsi" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">مرخصی بدون حقوق رفته</td>
+            <td id="estlji-mrkhsi" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">اضافه به مرخصی</td>
+            <td id="mazaya" class="border border-gray-200 p-2">0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-4">
+      <h2 class="text-lg font-bold text-red-500 border-b-2 border-red-400 pb-3 mb-6 text-right">پرداخت‌ها</h2>
+     
+    </div>
+
+    <div class="mt-4">
+      <h2 class="text-lg font-bold text-red-500 border-b-2 border-red-400 pb-3 mb-6 text-right">کسورات</h2>
+     
+    </div>
+
+    <div class="mt-4">
+      <h2 class="text-lg font-bold text-red-500 border-b-2 border-red-400 pb-3 mb-6 text-right">وام ها</h2>
+    
+    </div>
+
+    <div class="mt-4 p-4 bg-gray-100 text-right">
+      <strong class="text-red-500">قابل پرداخت عیدی:</strong>
+      <span id="khales">0</span>
+    </div>
+  </div>
+
+</body>
+
+</html>

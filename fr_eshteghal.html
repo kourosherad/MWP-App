@@ -7,9 +7,6 @@
   <title>گواهی اشتغال به کار</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    @tailwind base;
-    @tailwind components;
-    @tailwind utilities;
 
     @layer base {
       @font-face {
@@ -27,6 +24,13 @@
         src: url('/fonts/IRANSansWeb(FaNum)_Light.woff');
       }
     }
+
+    input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
 
     body {
       font-family: 'b-fnt', sans-serif;

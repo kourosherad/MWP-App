@@ -7,7 +7,6 @@
   <title>فرم ثبت ضامن</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-
     @layer base {
       @font-face {
         font-family: 'fnt';
@@ -27,6 +26,13 @@
 
     body {
       font-family: 'b-fnt', sans-serif;
+    }
+
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
   </style>
 </head>
@@ -115,8 +121,7 @@
 
       <!-- Submit Button -->
       <div>
-        <button type="submit" id="bt_sendx"
-          class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600">
+        <button type="submit" id="bt_sendx" class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600">
           ارسال
         </button>
       </div>

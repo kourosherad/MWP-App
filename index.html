@@ -26,7 +26,7 @@
     <!-- Header -->
     <header class="bg-red-700 fixed top-0 left-0 w-full z-50 flex items-center py-2 px-4 shadow-lg">
         <h1 class="text-center text-white text-xl flex-grow">سامانه پرسنلی واگن پارس</h1>
-        <img class="max-w-[90px] h-auto mr-4" src="/MWP-App/logo/white-wp.png" alt="wp-logo">
+        <img class="max-w-[90px] h-auto mr-4" src="/logo/white-wp.png" alt="wp-logo">
     </header>
 
     <!-- Profile Section -->
@@ -46,12 +46,9 @@
                 <button id="menu-btn" class="bg-white text-red-700 rounded-lg p-2 flex items-center justify-center">
                     <img class="w-8 h-8" src="icons/hamburgerbtn.png" alt="Items">
                 </button>
-                <ul id="menu" class="hidden mt-2 absolute right-0 bg-white text-gray-800 rounded-lg shadow-lg p-2 w-40">
+                <ul id="menu" class="hidden mt-2 absolute right-0 bg-neutral-400 text-gray-800 rounded-lg shadow-lg p-2 w-40">
                     <li class="flex items-center">
                       <a class="block w-full px-4 py-2 hover:text-red-500" href="#">تغییر رمز عبور</a>
-                    </li>
-                    <li class="flex items-center">
-                      <a class="block w-full px-4 py-2 hover:text-red-500" href="#">تنظیم تاریخ</a>
                     </li>
                   </ul>
                   
@@ -151,6 +148,13 @@
                 header.classList.remove('shadow-lg');
             }
         });
+
+        // گرفتن اطلاعات از سرور
+      $.get('/user-info', function(data) {
+        $('#userName').text(data.name);
+        $('#userId').text('شماره شناسایی: ' + data.id);
+        $('#current-date').text('تاریخ امروز: ' + data.currentDate);
+      });
 
         // Hamburger Menu Toggle
         const menuBtn = document.getElementById('menu-btn');

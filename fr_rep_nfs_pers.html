@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فرم مهمان</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @layer base {
+            @font-face {
+                font-family: 'fnt';
+                src: url('/fonts/IRANSansWeb(FaNum).woff');
+            }
+
+            @font-face {
+                font-family: 'b-fnt';
+                src: url('/fonts/IRANSansWeb(FaNum)_Bold.woff');
+            }
+
+            @font-face {
+                font-family: 'l-fnt';
+                src: url('/fonts/IRANSansWeb(FaNum)_Light.woff');
+            }
+        }
+
+        body {
+            font-family: 'b-fnt', sans-serif;
+        }
+
+        button:disabled {
+            background-color: #d1d5db;
+            /* رنگ خاکستری */
+            color: #9ca3af;
+            /* رنگ متن خاکستری کمرنگ */
+            cursor: not-allowed;
+            /* نشانگر ماوس تغییر به حالت غیرمجاز */
+            opacity: 0.7;
+            /* کمی شفاف‌تر */
+            pointer-events: none;
+            /* غیرقابل کلیک و غیرفعال */
+        }
+    </style>
+</head>
+
+<body class="bg-neutral-600 text-white font-family">
+    <div class="container mx-auto mt-10 px-4" dir="rtl">
+        <div id="nfs-pers" class="bg-white border-4 border-red-500 rounded-lg p-6 shadow-lg">
+            <h2 class="text-2xl font-bold text-center text-red-500 border-b-2 border-red-600 pb-4 mb-6">نفرساعت جذب شده</h2>
+
+
+            <!-- از تاریخ -->
+            <div class="mb-4 grid grid-cols-3 gap-2">
+                <div>
+                    <label for="sdy" class="block text-sm text-red-600 mb-1">روز</label>
+                    <select id="sdy"
+                        class="w-full p-2 rounded-md bg-gray-100 text-black focus:ring focus:ring-red-500 border border-red-500"></select>
+                </div>
+                <div>
+                    <label for="smnt" class="block text-sm text-red-600 mb-1">ماه</label>
+                    <select id="smnt"
+                        class="w-full p-2 rounded-md bg-gray-100 text-black focus:ring focus:ring-red-500 border border-red-500"></select>
+                </div>
+                <div>
+                    <label for="syr" class="block text-sm text-red-600 mb-1">سال</label>
+                    <select id="syr"
+                        class="w-full p-2 rounded-md bg-gray-100 text-black focus:ring focus:ring-red-500 border border-red-500">
+                        <option value="0"></option>
+                        <option value="1403">1403</option>
+                        <option value="1404">1404</option>
+                        <option value="1405">1405</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- تا تاریخ -->
+            <div class="mb-4 grid grid-cols-3 gap-2">
+                <div>
+                    <label for="edy" class="block text-sm text-red-600 mb-1">روز</label>
+                    <select id="edy"
+                        class="w-full p-2 rounded-md bg-gray-100 text-black focus:ring focus:ring-red-500 border border-red-500"></select>
+                </div>
+                <div>
+                    <label for="emnt" class="block text-sm text-red-600 mb-1">ماه</label>
+                    <select id="emnt"
+                        class="w-full p-2 rounded-md bg-gray-100 text-black focus:ring focus:ring-red-500 border border-red-500"></select>
+                </div>
+                <div>
+                    <label for="eyr" class="block text-sm text-red-600 mb-1">سال</label>
+                    <select id="eyr"
+                        class="w-full p-2 rounded-md bg-gray-100 text-black focus:ring focus:ring-red-500 border border-red-500">
+                        <option value="0"></option>
+                        <option value="1403">1403</option>
+                        <option value="1404">1404</option>
+                        <option value="1405">1405</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+            <!-- دکمه ها -->
+            <div class="grid grid-cols-1 gap-2">
+                <button id="bt_sendx"
+                    class="p-2 font-bold bg-red-500 text-white rounded hover:bg-red-600 transition-all">ارسال</button>
+            </div>
+
+
+
+            <script>
+                $(document).ready(function () {
+                    function add_day() {
+                        let menuOptions = '<option value="0"></option>';
+                        for (let i = 1; i <= 31; i++) {
+                            menuOptions += `<option value="${num(i)}">${num(i)}</option>`;
+                        }
+                        return menuOptions;
+                    }
+
+                    function add_month() {
+                        let menuOptions = '<option value="0"></option>';
+                        for (let i = 1; i <= 12; i++) {
+                            menuOptions += `<option value="${num(i)}">${num(i)}</option>`;
+                        }
+                        return menuOptions;
+                    }
+
+                    function num(n) {
+                        return n < 10 ? '0' + n : n;
+                    }
+
+                    $('#sdy').append(add_day());
+                    $('#smnt').append(add_month());
+                });
+            </script>
+            <script>
+                $(document).ready(function () {
+                    function add_day() {
+                        let menuOptions = '<option value="0"></option>';
+                        for (let i = 1; i <= 31; i++) {
+                            menuOptions += `<option value="${num(i)}">${num(i)}</option>`;
+                        }
+                        return menuOptions;
+                    }
+
+                    function add_month() {
+                        let menuOptions = '<option value="0"></option>';
+                        for (let i = 1; i <= 12; i++) {
+                            menuOptions += `<option value="${num(i)}">${num(i)}</option>`;
+                        }
+                        return menuOptions;
+                    }
+
+                    function num(n) {
+                        return n < 10 ? '0' + n : n;
+                    }
+
+                    $('#edy').append(add_day());
+                    $('#emnt').append(add_month());
+                });
+            </script>
+
+
+</body>
+
+</html>

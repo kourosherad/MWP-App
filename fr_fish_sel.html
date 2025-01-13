@@ -1,36 +1,46 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>جدول</title>
+  <title>فیش حقوقی</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @layer base {
-        @font-face {
-            font-family: 'fnt';
-            src: url('/fonts/IRANSansWeb(FaNum).woff');
-        }
+      @font-face {
+        font-family: 'fnt';
+        src: url('/fonts/IRANSansWeb(FaNum).woff');
+      }
 
-        @font-face {
-            font-family: 'b-fnt';
-            src: url('/MWP-App/fonts/IRANSansWeb\(FaNum\)_Bold.woff');
-        }
+      @font-face {
+        font-family: 'b-fnt';
+        src: url('/fonts/IRANSansWeb\(FaNum\)_Bold.woff');
+      }
 
-        @font-face {
-            font-family: 'l-fnt';
-            src: url('/fonts/IRANSansWeb(FaNum)_Light.woff');
-        }
+      @font-face {
+        font-family: 'l-fnt';
+        src: url('/fonts/IRANSansWeb(FaNum)_Light.woff');
+      }
     }
+
+    input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
 
     body {
-        font-family: 'b-fnt', sans-serif;
+      font-family: 'b-fnt', sans-serif;
     }
-</style>
+  </style>
 </head>
+
 <body class="bg-neutral-600 text-white font-b-fnt">
 
   <div class="max-w-4xl mx-auto bg-white text-black shadow-md rounded-lg overflow-hidden mt-4 p-4">
+    <h2 class="text-lg font-bold text-red-500 border-b-2 border-red-400 pb-3 mb-6 text-right">مشخصات</h2>
     <table class="w-full border-collapse border border-gray-200 text-sm">
       <thead>
         <tr class="bg-neutral-400 text-gray-100">
@@ -45,32 +55,104 @@
       </thead>
       <tbody>
         <tr>
-          <td class="border border-gray-200 p-2">سال</td>
-          <td class="border border-gray-200 p-2">ماه</td>
-          <td class="border border-gray-200 p-2">کدپرسنلی</td>
-          <td class="border border-gray-200 p-2">نام</td>
-          <td class="border border-gray-200 p-2">نام خانوادگی</td>
-          <td class="border border-gray-200 p-2">کارکرد موثر</td>
-          <td class="border border-gray-200 p-2">کارکرد مرخصی</td>
+          <td id="yr" class="border border-gray-200 p-2">سال</td>
+          <td id="mnt" class="border border-gray-200 p-2">ماه</td>
+          <td id="usrid" class="border border-gray-200 p-2">کدپرسنلی</td>
+          <td id="nam" class="border border-gray-200 p-2">نام</td>
+          <td id="fnam" class="border border-gray-200 p-2">نام خانوادگی</td>
+          <td id="karkrd-mosr" class="border border-gray-200 p-2">کارکرد موثر</td>
+          <td id="karkrd-mrkhsi" class="border border-gray-200 p-2">کارکرد مرخصی</td>
         </tr>
       </tbody>
     </table>
-    
+
+    <div class="mt-4">
+      <h2 class="text-lg font-bold text-red-500 border-b-2 border-red-400 pb-3 mb-6 text-right">کارکرد</h2>
+      <table class="w-full border-collapse border border-gray-200 text-sm">
+        <tbody>
+          <tr>
+            <td class="border border-gray-200 p-2">اضافه کار مازاد</td>
+            <td id="ezf-mzd" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">تاخیر</td>
+            <td id="takhir" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">غیبت</td>
+            <td id="qeybat" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">کارکرد اضافه کاری</td>
+            <td id="karkrd-ezf" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">کارکرد مرخصی</td>
+            <td id="karkrd-mrkhsi" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">کارکرد نوبت کاری ۲۲/۵ ٪</td>
+            <td id="karkrd-22" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">کسر از مرخصی</td>
+            <td id="kasr-mrkhsi" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">مرخصی استعلاجی</td>
+            <td id="estlji-mrkhsi" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">سایر مزایا</td>
+            <td id="mazaya" class="border border-gray-200 p-2">0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
     <div class="mt-4">
       <h2 class="text-lg font-bold text-red-500 border-b-2 border-red-400 pb-3 mb-6 text-right">پرداخت‌ها</h2>
       <table class="w-full border-collapse border border-gray-200 text-sm">
         <tbody>
           <tr>
             <td class="border border-gray-200 p-2">فوق‌العاده مسکن</td>
-            <td class="border border-gray-200 p-2">0</td>
+            <td id="foq-mskn" class="border border-gray-200 p-2">0</td>
           </tr>
           <tr>
             <td class="border border-gray-200 p-2">حقوق مبنا</td>
-            <td class="border border-gray-200 p-2">0</td>
+            <td id="mabna-sal" class="border border-gray-200 p-2">0</td>
           </tr>
           <tr>
-            <td class="border border-gray-200 p-2">جمع مزایا</td>
-            <td class="border border-gray-200 p-2">0</td>
+          <tr>
+            <td class="border border-gray-200 p-2">حق جذب</td>
+            <td id="jazb-sal" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">دستمزد</td>
+            <td id="mozd-sal" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">روند ماه قبل</td>
+            <td id="ravand" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">اضاف کاری</td>
+            <td id="ezaf-sal" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">حق اولاد</td>
+            <td id="olad-sal" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">فوق العاده انگیزشی</td>
+            <td id="angizeshi" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 p-2">حق بن</td>
+            <td id="bon-sal" class="border border-gray-200 p-2">0</td>
+          </tr>
+          <td class="border border-gray-200 p-2">جمع مزایا</td>
+          <td id="mazaya-sal" class="border border-gray-200 p-2">0</td>
           </tr>
         </tbody>
       </table>
@@ -82,25 +164,31 @@
         <tbody>
           <tr>
             <td class="border border-gray-200 p-2">بیمه تامین اجتماعی</td>
-            <td class="border border-gray-200 p-2">8,452,936</td>
+            <td id="tamin" class="border border-gray-200 p-2">0</td>
           </tr>
           <tr>
             <td class="border border-gray-200 p-2">مالیات</td>
-            <td class="border border-gray-200 p-2">3,656,219</td>
+            <td id="tax" class="border border-gray-200 p-2">0</td>
           </tr>
           <tr>
             <td class="border border-gray-200 p-2">جمع کسور</td>
-            <td class="border border-gray-200 p-2">17,479,155</td>
+            <td id="kosur" class="border border-gray-200 p-2">0</td>
           </tr>
         </tbody>
       </table>
     </div>
 
+    <div class="mt-4">
+      <h2 class="text-lg font-bold text-red-500 border-b-2 border-red-400 pb-3 mb-6 text-right">وام ها</h2>
+    
+    </div>
+
     <div class="mt-4 p-4 bg-gray-100 text-right">
       <strong class="text-red-500">خالص پرداختی:</strong>
-      <span>108,584,602</span>
+      <span id="khales">0</span>
     </div>
   </div>
 
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,61 +11,78 @@
             font-family: fnt;
             src: url(/fonts/IRANSansWeb\(FaNum\).woff);
         }
+
         @font-face {
             font-family: b-fnt;
             src: url(/fonts/IRANSansWeb\(FaNum\)_Bold.woff);
         }
+
         @font-face {
             font-family: l-fnt;
             src: url(/fonts/IRANSansWeb\(FaNum\)_Light.woff);
         }
+
         @font-face {
             font-family: u-fnt;
             src: url(/fonts/IRANSansWeb\(FaNum\)_UltraLight.woff);
         }
+
         body {
             font-family: b-fnt;
         }
+
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
     </style>
 </head>
+
 <body class="bg-neutral-600 text-white font-b-fnt">
 
     <!-- Profile Section -->
-  <div class="container mx-auto mt-4 px-4 sm:px-6 md:px-8">
-    <div class="flex items-center justify-end bg-neutral-400 text-gray-100 p-4 rounded-lg mb-4">
-      <div>
-        <h4 class="text-lg font-bold">نام کاربر</h4>
-        <p class="text-sm">شماره شناسایی: 123456</p>
-      </div>
-      <img src="icons/usericon.png" alt="Profile Picture" class="w-16 h-16 rounded-full ml-4">
+    <div class="container mx-auto mt-4 px-4 sm:px-6 md:px-8">
+        <div class="flex items-center justify-end bg-neutral-400 text-gray-100 p-4 rounded-lg mb-4">
+            <div>
+                <h4 class="text-lg font-bold">نام کاربر</h4>
+                <p class="text-sm">شماره شناسایی: 123456</p>
+            </div>
+            <img src="icons/usericon.png" alt="Profile Picture" class="w-16 h-16 rounded-full ml-4">
+        </div>
     </div>
-  </div>
 
     <div class="container mx-auto mt-10 px-4" dir="rtl">
         <div class="bg-white text-white p-6 rounded-lg shadow-lg border-4 border-red-600">
-            <h2 class="text-2xl font-bold text-red-500 border-b-2 border-red-600 pb-3 mb-6 text-center">پیشنهاد جدید</h2>
+            <h2 class="text-2xl font-bold text-red-500 border-b-2 border-red-600 pb-3 mb-6 text-center">پیشنهاد جدید
+            </h2>
 
             <!-- موضوع -->
             <div class="mb-4">
                 <label for="mozu" class="text-red-500 text-sm block mb-2">موضوع</label>
-                <input type="text" id="mozu" class="w-full bg-gray-100 text-black border border-red-500 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-red-500">
+                <input type="text" id="mozu"
+                    class="w-full bg-gray-100 text-black border border-red-500 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-red-500">
             </div>
 
             <!-- شرح مشکل -->
             <div class="mb-4">
                 <label for="des-moshkl" class="text-red-500 text-sm block mb-2">شرح مشکل</label>
-                <textarea id="des-nz" rows="3" class="w-full bg-gray-100 text-black border border-red-500 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-red-500 "></textarea>
+                <textarea id="des-nz" rows="3"
+                    class="w-full bg-gray-100 text-black border border-red-500 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-red-500 "></textarea>
             </div>
 
             <!-- راه حل مشکل -->
             <div class="mb-4">
                 <label for="des-moshkl" class="text-red-500 text-sm block mb-2">راه حل</label>
-                <textarea id="des-nz" rows="3" class="w-full bg-gray-100 text-black border border-red-500 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-red-500"></textarea>
+                <textarea id="des-nz" rows="3"
+                    class="w-full bg-gray-100 text-black border border-red-500 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-red-500"></textarea>
             </div>
             <!-- پیشنهاد را می توان  -->
             <div class="mb-4">
                 <label for="pishnahd-gz" class="text-red-500 text-sm block mb-2">پیشنهاد را می توانم</label>
-                <select id="pishnahd-gz" class="w-full bg-gray-100 text-black border border-red-500 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-red-500">
+                <select id="pishnahd-gz"
+                    class="w-full bg-gray-100 text-black border border-red-500 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-red-500">
                     <option value="0"></option>
                     <option value="1">"به تنهایی اجرا کنم</option>
                     <option value="2">یه کمک گروه می توانم اجرا کنم</option>
@@ -75,10 +93,12 @@
 
             <!-- دکمه ارسال -->
             <div>
-                <button id="bt_sendf" class="w-full bg-red-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-700 transition">ارسال</button>
+                <button id="bt_sendf"
+                    class="w-full bg-red-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-700 transition">ارسال</button>
             </div>
         </div>
     </div>
 
 </body>
+
 </html>

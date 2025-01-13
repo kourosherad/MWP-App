@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>گواهی کسر از حقوق</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @tailwind base;
-        @tailwind components;
-        @tailwind utilities;
 
         @layer base {
             @font-face {
                 font-family: "fnt";
                 src: url(fonts/IRANSansWeb.woff);
             }
+
             @font-face {
                 font-family: "fnt-b";
                 src: url(fonts/IRANSansWeb_Bold.woff);
             }
+
             body {
                 font-family: 'fnt-b', sans-serif;
             }
         }
+
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
     </style>
 </head>
+
 <body class="bg-neutral-600 text-gray-100">
 
     <!-- Header -->
@@ -37,17 +45,20 @@
     <div class="flex flex-col items-center mt-20">
 
         <!-- Button 1 -->
-        <button class="w-3/4 my-3 flex justify-between items-center bg-white text-red-700 border border-red-800 rounded-lg py-5  px-4 hover:bg-red-700 hover:text-white transition"
+        <button
+            class="w-3/4 my-3 flex justify-between items-center bg-white text-red-700 border border-red-800 rounded-lg py-5  px-4 hover:bg-red-700 hover:text-white transition"
             onclick="location.href='fr_niaz_frd.html'">
-            <span class="flex items-center justify-center w-full">نیاز  های آموزشی من</span>
+            <span class="flex items-center justify-center w-full">نیاز های آموزشی من</span>
         </button>
-    
+
         <!-- Button 2 -->
-        <button class="w-3/4 my-3 flex justify-between items-center bg-white text-red-700 border border-red-800 rounded-lg py-5 px-4 hover:bg-red-700 hover:text-white transition"
+        <button
+            class="w-3/4 my-3 flex justify-between items-center bg-white text-red-700 border border-red-800 rounded-lg py-5 px-4 hover:bg-red-700 hover:text-white transition"
             onclick="location.href='fr_niaz_saz.html'">
             <span class="flex items-center justify-center w-full">نیاز های آموزشی سازمانی</span>
         </button>
     </div>
 
 </body>
+
 </html>

@@ -9,28 +9,42 @@
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-    
         @layer base {
-          @font-face {
-            font-family: 'fnt';
-            src: url('/fonts/IRANSansWeb(FaNum).woff');
-          }
-    
-          @font-face {
-            font-family: 'b-fnt';
-            src: url('/fonts/IRANSansWeb(FaNum)_Bold.woff');
-          }
-    
-          @font-face {
-            font-family: 'l-fnt';
-            src: url('/fonts/IRANSansWeb(FaNum)_Light.woff');
-          }
+            @font-face {
+                font-family: 'fnt';
+                src: url('/fonts/IRANSansWeb(FaNum).woff');
+            }
+
+            @font-face {
+                font-family: 'b-fnt';
+                src: url('/fonts/IRANSansWeb(FaNum)_Bold.woff');
+            }
+
+            @font-face {
+                font-family: 'l-fnt';
+                src: url('/fonts/IRANSansWeb(FaNum)_Light.woff');
+            }
         }
-    
+
         body {
-          font-family: 'b-fnt', sans-serif;
+            font-family: 'b-fnt', sans-serif;
         }
-      </style>
+
+        button:disabled {
+            background-color: #d1d5db;
+            /* رنگ خاکستری */
+            color: #9ca3af;
+            /* رنگ متن خاکستری کمرنگ */
+            cursor: not-allowed;
+            /* نشانگر ماوس تغییر به حالت غیرمجاز */
+            opacity: 0.7;
+            /* کمی شفاف‌تر */
+            pointer-events: none;
+            /* غیرقابل کلیک و غیرفعال */
+        }
+
+        
+    </style>
 </head>
 
 <body class="bg-neutral-600 text-white font-family">
@@ -97,22 +111,23 @@
             <div class="mb-4">
                 <label for="qt_dy" class="block text-sm text-red-600 mb-1">مدت اقامت (روز)</label>
                 <input type="number" id="qt_dy"
-                    class="w-full p-2 rounded-md bg-gray-100 text-black focus:ring focus:ring-red-500 border border-red-500" min="1"
-                    placeholder="مدت اقامت">
+                    class="w-full p-2 rounded-md bg-gray-100 text-black focus:ring focus:ring-red-500 border border-red-500"
+                    min="1" placeholder="مدت اقامت">
             </div>
 
             <!-- تعداد میهمان -->
             <div class="mb-4">
                 <label for="qt_gst" class="block text-sm text-red-600 mb-1">تعداد مهمان</label>
                 <input type="number" id="qt_gst"
-                    class="w-full p-2 rounded-md bg-gray-100 text-black focus:ring focus:ring-red-500 border border-red-500" min="1"
-                    placeholder="تعداد مهمان">
+                    class="w-full p-2 rounded-md bg-gray-100 text-black focus:ring focus:ring-red-500 border border-red-500"
+                    min="1" placeholder="تعداد مهمان">
             </div>
 
             <!-- نیاز به اسکان -->
             <div class="mb-4">
                 <label for="esk" class="block text-sm text-red-600 mb-1">نیاز به اسکان</label>
-                <select id="esk" class="w-full p-2 rounded-md bg-gray-100 text-black focus:ring focus:ring-red-500 border border-red-500">
+                <select id="esk"
+                    class="w-full p-2 rounded-md bg-gray-100 text-black focus:ring focus:ring-red-500 border border-red-500">
                     <option value="0"></option>
                     <option value="no">خیر</option>
                     <option value="yes">بله</option>
@@ -122,7 +137,8 @@
             <!-- علت حضور -->
             <div class="mb-4">
                 <label for="des" class="block text-sm text-red-600 mb-1">علت حضور/توضیحات تکمیلی</label>
-                <textarea id="des" class="w-full p-2 rounded-md bg-gray-100 text-black focus:ring focus:ring-red-500 border border-red-500"
+                <textarea id="des"
+                    class="w-full p-2 rounded-md bg-gray-100 text-black focus:ring focus:ring-red-500 border border-red-500"
                     rows="3" placeholder="علت حضور را وارد کنید"></textarea>
             </div>
 
@@ -134,6 +150,40 @@
                 <button id="bt_sendx"
                     class="p-2 font-bold bg-red-500 text-white rounded hover:bg-red-600 transition-all">ارسال</button>
             </div>
+
+            <!-- Modal -->
+            <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+                <div class="bg-white text-black rounded-lg shadow-lg p-6 w-full max-w-md overflow-hidden">
+                    <h3 class="text-lg font-bold text-center text-red-600 mb-4">تعداد نفرات</h3>
+                    <div class="mb-4">
+                        <label for="numPersons" class="block text-sm text-red-600 mb-1">تعداد افراد</label>
+                        <input type="number" id="numPersons" min="1"
+                            class="w-full p-2 rounded-md bg-gray-100 border border-red-500">
+                    </div>
+                    <button id="generateForms"
+                        class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">ایجاد
+                        فرم‌ها</button>
+                    <div id="personForms" class="mt-4 max-h-[300px] overflow-y-auto">
+                        <!-- فرم‌ها به صورت پویا اینجا اضافه می‌شوند -->
+                    </div>
+                    <button id="savePersons"
+                        class="w-full mt-4 bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition">ثبت
+                        اطلاعات</button>
+                    <button id="closeModal"
+                        class="w-full mt-4 bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition">بستن</button>
+                </div>
+            </div>
+
+
+            <!-- اطلاعات ثبت‌شده -->
+            <div class="container mx-auto mt-10 px-4 hidden" id="personListContainer" dir="rtl">
+                <div class="bg-white text-black border-4 border-green-700 rounded-lg p-6 shadow-lg">
+                    <h3 class="text-2xl font-bold text-center text-green-700 border-b-2 border-green-600 pb-4 mb-6">لیست
+                        افراد ثبت‌شده</h3>
+                    <ul id="personList" class="list-disc pl-5"></ul>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -161,6 +211,114 @@
 
             $('#dy').append(add_day());
             $('#mnt').append(add_month());
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            const persons = []; // ذخیره اطلاعات افراد
+
+            // باز کردن Modal
+            $('#bt_add_pers').on('click', function () {
+                $('#modal').removeClass('hidden');
+                resetModal(); // ریست کردن حالت مودال
+            });
+
+            // بستن Modal
+            $('#closeModal').on('click', function () {
+                $('#modal').addClass('hidden');
+            });
+
+            // ریست کردن حالت مودال
+            function resetModal() {
+                $('#numPersons').val(''); // تعداد افراد ریست شود
+                $('#personForms').html(''); // فرم‌ها حذف شوند
+                $('#savePersons').prop('disabled', true); // دکمه ثبت اطلاعات غیرفعال شود
+            }
+
+            // ایجاد فرم‌های اطلاعات افراد
+            $('#generateForms').on('click', function () {
+                const numPersons = parseInt($('#numPersons').val());
+                if (!numPersons || numPersons <= 0) {
+                    alert('لطفاً تعداد افراد را وارد کنید.');
+                    return;
+                }
+
+                let formsHtml = '';
+                for (let i = 1; i <= numPersons; i++) {
+                    formsHtml += `
+                    <div class="mb-4 p-4 border rounded-lg bg-gray-50">
+                        <h4 class="text-md font-bold text-gray-700 mb-2">اطلاعات فرد ${i}</h4>
+                        <div class="mb-2">
+                            <label for="name_${i}" class="block text-sm text-gray-600">نام و نام خانوادگی</label>
+                            <input type="text" id="name_${i}" class="w-full p-2 rounded-md bg-gray-100 border">
+                        </div>
+                        <div class="mb-2">
+                            <label for="address_${i}" class="block text-sm text-gray-600">سمت</label>
+                            <input type="text" id="address_${i}" class="w-full p-2 rounded-md bg-gray-100 border">
+                        </div>
+                    </div>
+                `;
+                }
+                $('#personForms').html(formsHtml);
+
+                // دکمه ثبت اطلاعات فعال شود
+                $('#savePersons').prop('disabled', false);
+            });
+
+            // ذخیره اطلاعات نفرات
+            $(document).on('click', '#savePersons', function () {
+                const numPersons = $('#personForms > div').length;
+                if (numPersons === 0) {
+                    alert('ابتدا فرم‌ها را ایجاد کنید.');
+                    return;
+                }
+
+                let allComplete = true;
+                persons.length = 0; // لیست افراد ریست شود
+
+                for (let i = 1; i <= numPersons; i++) {
+                    const id = $(`#id_${i}`).val();
+                    const name = $(`#name_${i}`).val();
+                    const address = $(`#address_${i}`).val();
+                    const phone = $(`#phone_${i}`).val();
+
+                    if (!id || !name || !address || !phone) {
+                        allComplete = false;
+                        break;
+                    }
+
+                    const person = { id, name, address, phone };
+                    persons.push(person);
+                }
+
+                if (!allComplete) {
+                    alert('لطفاً تمام اطلاعات فرم‌ها را کامل کنید.');
+                    return;
+                }
+
+                // نمایش اطلاعات در لیست
+                $('#personList').empty();
+                persons.forEach((person, index) => {
+                    $('#personList').append(`
+                    <li>فرد ${index + 1}: ${person.name}, ${person.id}, ${person.phone}, ${person.address}</li>
+                `);
+                });
+
+                $('#personListContainer').removeClass('hidden');
+                $('#modal').addClass('hidden');
+            });
+
+            // ارسال اطلاعات به مدیریت
+            $('#bt_sendx').on('click', function () {
+                if (persons.length === 0) {
+                    alert('ابتدا اطلاعات افراد را ثبت کنید.');
+                    return;
+                }
+
+                console.log('ارسال اطلاعات:', persons);
+                alert('اطلاعات با موفقیت ارسال شد!');
+            });
         });
     </script>
 </body>
