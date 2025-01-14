@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,12 @@
     <style>
         @font-face {
             font-family: "fnt";
-            src: url(fonts/IRANSansWeb.woff);
+            src: url(/public/fonts/IRANSansWeb.woff);
         }
 
         @font-face {
             font-family: "fnt-b";
-            src: url(fonts/IRANSansWeb_Bold.woff);
+            src: url(/public/fonts/IRANSansWeb_Bold.woff);
         }
 
         body {
@@ -21,12 +22,13 @@
         }
     </style>
 </head>
+
 <body class="bg-neutral-600 text-gray-100">
 
     <!-- Header -->
     <header class="bg-red-700 fixed top-0 left-0 w-full z-50 flex items-center py-2 px-4 shadow-lg">
         <h1 class="text-center text-white text-xl flex-grow">سامانه پرسنلی واگن پارس</h1>
-        <img class="max-w-[90px] h-auto mr-4" src="/logo/white-wp.png" alt="wp-logo">
+        <img class="max-w-[90px] h-auto mr-4" src="/public/logo/white-wp.png" alt="wp-logo">
     </header>
 
     <!-- Profile Section -->
@@ -36,25 +38,25 @@
                 <h4 class="text-lg">نام کاربر</h4>
                 <p class="text-sm">شماره شناسایی: 123456</p>
             </div>
-            <img class="w-16 h-16 rounded-full ml-4" src="icons/usericon.png" alt="Profile Picture">
+            <img class="w-16 h-16 rounded-full ml-4" src="/public/icons/usericon.png" alt="Profile Picture">
         </div>
 
         <!-- Info Bar -->
         <div class="bg-gray-800 text-gray-100 p-2 rounded-lg flex items-center justify-between mb-4">
             <div id="current-date">تاریخ امروز: 1402/10/26</div>
             <div class="relative group">
+                
                 <button id="menu-btn" class="bg-white text-red-700 rounded-lg p-2 flex items-center justify-center">
-                    <img class="w-8 h-8" src="icons/hamburgerbtn.png" alt="Items">
+                    <img class="w-8 h-8" src="/public/icons/hamburgerbtn.png" alt="Items">
                 </button>
-                <ul id="menu" class="hidden mt-2 absolute right-0 bg-neutral-400 text-gray-800 rounded-lg shadow-lg p-2 w-40">
+
+                <ul id="menu"
+                    class="hidden mt-2 absolute right-0 bg-neutral-400 text-gray-800 rounded-lg shadow-lg p-2 w-40">
                     <li class="flex items-center">
-                      <a class="block w-full px-4 py-2 hover:text-red-500" href="#">تغییر رمز عبور</a>
+                        <a class="block w-full px-4 py-2 hover:text-red-500" href="#">تغییر رمز عبور</a>
                     </li>
-                  </ul>
-                  
-                  
-                  
-                  
+                </ul>
+
             </div>
         </div>
 
@@ -63,52 +65,52 @@
             <!-- Generic Button Class -->
             <button class="btn-main" onclick="location.href='https://ets.mapnawagonpars.com/'">
                 <span>کارت ساعت (ETS)</span>
-                <img class="w-8 h-8 ml-2" src="icons/time-tracking.png" alt="ETS Icon">
+                <img class="w-8 h-8 ml-2" src="/public/icons/time-tracking.png" alt="ETS Icon">
             </button>
 
             <button class="btn-main" onclick="location.href='fr_pishnahad.html'">
                 <span>نظام پیشنهادات</span>
-                <img class="w-8 h-8 ml-2" src="icons/suggestion.png" alt="Suggestions Icon">
+                <img class="w-8 h-8 ml-2" src="/public/icons/suggestion.png" alt="Suggestions Icon">
             </button>
 
             <button class="btn-main" onclick="location.href='fr_rep_nfs_pers.html'">
                 <span>نفرساعت جذب شده</span>
-                <img class="w-8 h-8 ml-2" src="icons/time-management.png" alt="Hours Icon">
+                <img class="w-8 h-8 ml-2" src="/public/icons/time-management.png" alt="Hours Icon">
             </button>
 
             <button class="btn-main" onclick="location.href='fr_fish.html'">
                 <span>فیش حقوقی</span>
-                <img class="w-8 h-8 ml-2" src="icons/checking.png" alt="Salary Icon">
+                <img class="w-8 h-8 ml-2" src="/public/icons/checking.png" alt="Salary Icon">
             </button>
 
             <button class="btn-main" onclick="location.href='fr_kasr.html'">
                 <span>گواهی کسر از حقوق</span>
-                <img class="w-8 h-8 ml-2" src="icons/time-tracking.png" alt="#">
+                <img class="w-8 h-8 ml-2" src="/public/icons/time-tracking.png" alt="#">
             </button>
 
             <button class="btn-main" onclick="location.href='fr_niaz.html'">
                 <span>نیاز سنجی</span>
-                <img class="w-8 h-8 ml-2" src="icons/employees.png" alt="Insurance Icon">
+                <img class="w-8 h-8 ml-2" src="/public/icons/employees.png" alt="Insurance Icon">
             </button>
 
             <button class="btn-main" onclick="location.href='fr_mosaede.html'">
                 <span>درخواست مساعده</span>
-                <img class="w-8 h-8 ml-2" src="icons/hand.png" alt="Request Icon">
+                <img class="w-8 h-8 ml-2" src="/public/icons/hand.png" alt="Request Icon">
             </button>
 
             <button class="btn-main" onclick="location.href='fr_car.html'">
                 <span>درخواست خودرو</span>
-                <img class="w-8 h-8 ml-2" src="icons/sedan.png" alt="Car Icon">
+                <img class="w-8 h-8 ml-2" src="/public/icons/sedan.png" alt="Car Icon">
             </button>
 
             <button class="btn-main" onclick="location.href='fr_guest.html'">
                 <span>فرم مهمان</span>
-                <img class="w-8 h-8 ml-2" src="icons/contact-list.png" alt="Guest Icon">
+                <img class="w-8 h-8 ml-2" src="/public/icons/contact-list.png" alt="Guest Icon">
             </button>
 
             <button class="btn-main" onclick="location.href='fr_exam.html'">
                 <span>شرکت در آزمون</span>
-                <img class="w-8 h-8 ml-2" src="icons/exam.png" alt="Exam Icon">
+                <img class="w-8 h-8 ml-2" src="/public/icons/exam.png" alt="Exam Icon">
             </button>
         </div>
 
@@ -150,11 +152,11 @@
         });
 
         // گرفتن اطلاعات از سرور
-      $.get('/user-info', function(data) {
-        $('#userName').text(data.name);
-        $('#userId').text('شماره شناسایی: ' + data.id);
-        $('#current-date').text('تاریخ امروز: ' + data.currentDate);
-      });
+        $.get('/user-info', function (data) {
+            $('#userName').text(data.name);
+            $('#userId').text('شماره شناسایی: ' + data.id);
+            $('#current-date').text('تاریخ امروز: ' + data.currentDate);
+        });
 
         // Hamburger Menu Toggle
         const menuBtn = document.getElementById('menu-btn');
@@ -166,4 +168,5 @@
     </script>
 
 </body>
+
 </html>
