@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>فرم ثبت ضامن</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/public/lib/jquery/jquery.js"></script>
   <style>
     @layer base {
       @font-face {
@@ -16,11 +17,6 @@
       @font-face {
         font-family: 'b-fnt';
         src: url('/public/fonts/IRANSansWeb(FaNum)_Bold.woff');
-      }
-
-      @font-face {
-        font-family: 'l-fnt';
-        src: url('/public/fonts/IRANSansWeb(FaNum)_Light.woff');
       }
 
     }
@@ -128,23 +124,25 @@
       </div>
     </form>
   </div>
-
-  <!-- JavaScript for Dropdowns -->
+  
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const appendOptions = (start, end) => {
-        let options = '';
-        for (let i = start; i <= end; i++) {
-          options += `<option value="${i}">${i < 10 ? '0' + i : i}</option>`;
+    $(document).ready(function () {
+        // Function to generate options for a dropdown
+        function appendOptions(start, end) {
+            let options = '';
+            for (let i = start; i <= end; i++) {
+                options += `<option value="${i}">${i < 10 ? '0' + i : i}</option>`;
+            }
+            return options;
         }
-        return options;
-      };
 
-      document.getElementById('dy').innerHTML = appendOptions(1, 31);
-      document.getElementById('mnt').innerHTML = appendOptions(1, 12);
-      document.getElementById('yr').innerHTML = appendOptions(1340, 1440);
+        // Populate dropdowns using jQuery
+        $('#dy').html(appendOptions(1, 31)); // Day dropdown
+        $('#mnt').html(appendOptions(1, 12)); // Month dropdown
+        $('#yr').html(appendOptions(1340, 1440)); // Year dropdown
     });
-  </script>
+</script>
+
 </body>
 
 </html>

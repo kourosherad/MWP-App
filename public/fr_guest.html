@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>فرم مهمان</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="/public/lib/jquery/jquery.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @layer base {
@@ -37,8 +36,6 @@
             pointer-events: none;
             /* غیرقابل کلیک و غیرفعال */
         }
-
-        
     </style>
 </head>
 
@@ -211,27 +208,22 @@
 
     <script>
         $(document).ready(function () {
-            const persons = []; // ذخیره اطلاعات افراد
+            const persons = []; // Array to store person data
 
-            // باز کردن Modal
+            // Open Modal
             $('#bt_add_pers').on('click', function () {
                 $('#modal').removeClass('hidden');
-                resetModal(); // ریست کردن حالت مودال
+                $('#numPersons').val(''); // Reset input for the number of persons
+                $('#personForms').html(''); // Clear generated forms
+                $('#savePersons').prop('disabled', true); // Disable save button
             });
 
-            // بستن Modal
+            // Close Modal
             $('#closeModal').on('click', function () {
                 $('#modal').addClass('hidden');
             });
 
-            // ریست کردن حالت مودال
-            function resetModal() {
-                $('#numPersons').val(''); // تعداد افراد ریست شود
-                $('#personForms').html(''); // فرم‌ها حذف شوند
-                $('#savePersons').prop('disabled', true); // دکمه ثبت اطلاعات غیرفعال شود
-            }
-
-            // ایجاد فرم‌های اطلاعات افراد
+            // Generate Person Forms
             $('#generateForms').on('click', function () {
                 const numPersons = parseInt($('#numPersons').val());
                 if (!numPersons || numPersons <= 0) {
@@ -239,9 +231,10 @@
                     return;
                 }
 
-                let formsHtml = '';
+                $('#personForms').html(''); // Clear any previously generated forms
+
                 for (let i = 1; i <= numPersons; i++) {
-                    formsHtml += `
+                    $('#personForms').append(`
                     <div class="mb-4 p-4 border rounded-lg bg-gray-50">
                         <h4 class="text-md font-bold text-gray-700 mb-2">اطلاعات فرد ${i}</h4>
                         <div class="mb-2">
@@ -253,38 +246,34 @@
                             <input type="text" id="address_${i}" class="w-full p-2 rounded-md bg-gray-100 border">
                         </div>
                     </div>
-                `;
+                `);
                 }
-                $('#personForms').html(formsHtml);
 
-                // دکمه ثبت اطلاعات فعال شود
-                $('#savePersons').prop('disabled', false);
+                $('#savePersons').prop('disabled', false); // Enable save button
             });
 
-            // ذخیره اطلاعات نفرات
-            $(document).on('click', '#savePersons', function () {
+            // Save Persons Data
+            $('#savePersons').on('click', function () {
                 const numPersons = $('#personForms > div').length;
+
                 if (numPersons === 0) {
                     alert('ابتدا فرم‌ها را ایجاد کنید.');
                     return;
                 }
 
+                persons.length = 0; // Reset persons array
                 let allComplete = true;
-                persons.length = 0; // لیست افراد ریست شود
 
                 for (let i = 1; i <= numPersons; i++) {
-                    const id = $(`#id_${i}`).val();
                     const name = $(`#name_${i}`).val();
                     const address = $(`#address_${i}`).val();
-                    const phone = $(`#phone_${i}`).val();
 
-                    if (!id || !name || !address || !phone) {
+                    if (!name || !address) {
                         allComplete = false;
                         break;
                     }
 
-                    const person = { id, name, address, phone };
-                    persons.push(person);
+                    persons.push({ name, address });
                 }
 
                 if (!allComplete) {
@@ -292,11 +281,11 @@
                     return;
                 }
 
-                // نمایش اطلاعات در لیست
-                $('#personList').empty();
+                // Populate the persons list
+                $('#personList').html('');
                 persons.forEach((person, index) => {
                     $('#personList').append(`
-                    <li>فرد ${index + 1}: ${person.name}, ${person.id}, ${person.phone}, ${person.address}</li>
+                    <li>فرد ${index + 1}: ${person.name}, ${person.address}</li>
                 `);
                 });
 
@@ -304,7 +293,7 @@
                 $('#modal').addClass('hidden');
             });
 
-            // ارسال اطلاعات به مدیریت
+            // Send Data to Management
             $('#bt_sendx').on('click', function () {
                 if (persons.length === 0) {
                     alert('ابتدا اطلاعات افراد را ثبت کنید.');
@@ -316,6 +305,7 @@
             });
         });
     </script>
+
 </body>
 
 </html>

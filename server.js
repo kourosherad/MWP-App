@@ -10,9 +10,9 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/"));
 
 var msc = mysql.createConnection({
-    host: "172.30.207.137",
+    host: "localhost",
     user: "root",
-    password: "Aa@12345",
+    password: "09392983784",
     database: "mwp_app"
   });
 

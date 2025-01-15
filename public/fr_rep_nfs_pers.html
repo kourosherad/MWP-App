@@ -8,6 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/public/lib/jquery/jquery.js"></script>
     <style>
         @layer base {
             @font-face {
@@ -18,12 +19,6 @@
             @font-face {
                 font-family: 'b-fnt';
                 src: url('/public/fonts/IRANSansWeb(FaNum)_Bold.woff');
-            }
-
-            @font-face {
-                font-family: 'l-fnt';
-                src: url('/public/fonts/IRANSansWeb(FaNum)_Light.woff');
-
             }
         }
 
@@ -49,7 +44,8 @@
 <body class="bg-neutral-600 text-white font-family">
     <div class="container mx-auto mt-10 px-4" dir="rtl">
         <div id="nfs-pers" class="bg-white border-4 border-red-500 rounded-lg p-6 shadow-lg">
-            <h2 class="text-2xl font-bold text-center text-red-500 border-b-2 border-red-600 pb-4 mb-6">نفرساعت جذب شده</h2>
+            <h2 class="text-2xl font-bold text-center text-red-500 border-b-2 border-red-600 pb-4 mb-6">نفرساعت جذب شده
+            </h2>
 
 
             <!-- از تاریخ -->
@@ -109,57 +105,33 @@
             </div>
 
 
-
             <script>
                 $(document).ready(function () {
-                    function add_day() {
+                    // Add Day Options
+                    function addDayOptions(target) {
                         let menuOptions = '<option value="0"></option>';
                         for (let i = 1; i <= 31; i++) {
-                            menuOptions += `<option value="${num(i)}">${num(i)}</option>`;
+                            const value = i < 10 ? '0' + i : i;
+                            menuOptions += `<option value="${value}">${value}</option>`;
                         }
-                        return menuOptions;
+                        $(target).append(menuOptions);
                     }
 
-                    function add_month() {
+                    // Add Month Options
+                    function addMonthOptions(target) {
                         let menuOptions = '<option value="0"></option>';
                         for (let i = 1; i <= 12; i++) {
-                            menuOptions += `<option value="${num(i)}">${num(i)}</option>`;
+                            const value = i < 10 ? '0' + i : i;
+                            menuOptions += `<option value="${value}">${value}</option>`;
                         }
-                        return menuOptions;
+                        $(target).append(menuOptions);
                     }
 
-                    function num(n) {
-                        return n < 10 ? '0' + n : n;
-                    }
-
-                    $('#sdy').append(add_day());
-                    $('#smnt').append(add_month());
-                });
-            </script>
-            <script>
-                $(document).ready(function () {
-                    function add_day() {
-                        let menuOptions = '<option value="0"></option>';
-                        for (let i = 1; i <= 31; i++) {
-                            menuOptions += `<option value="${num(i)}">${num(i)}</option>`;
-                        }
-                        return menuOptions;
-                    }
-
-                    function add_month() {
-                        let menuOptions = '<option value="0"></option>';
-                        for (let i = 1; i <= 12; i++) {
-                            menuOptions += `<option value="${num(i)}">${num(i)}</option>`;
-                        }
-                        return menuOptions;
-                    }
-
-                    function num(n) {
-                        return n < 10 ? '0' + n : n;
-                    }
-
-                    $('#edy').append(add_day());
-                    $('#emnt').append(add_month());
+                    // Append options to dropdowns
+                    addDayOptions('#sdy');  // Start day dropdown
+                    addMonthOptions('#smnt'); // Start month dropdown
+                    addDayOptions('#edy');  // End day dropdown
+                    addMonthOptions('#emnt'); // End month dropdown
                 });
             </script>
 

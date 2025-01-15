@@ -1,174 +1,4 @@
 
-<!DOCTYPE html>
-<html lang="fa">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سامانه پرسنلی واگن پارس مپنا</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @font-face {
-            font-family: "fnt";
-            src: url(/public/fonts/IRANSansWeb.woff);
-        }
-
-        @font-face {
-            font-family: "fnt-b";
-            src: url(/public/fonts/IRANSansWeb_Bold.woff);
-        }
-
-        body {
-            font-family: 'fnt-b';
-        }
-    </style>
-</head>
-
-<body class="bg-neutral-600 text-gray-100">
-
-    <!-- Header -->
-    <header class="bg-red-700 fixed top-0 left-0 w-full z-50 flex items-center py-2 px-4 shadow-lg">
-        <h1 class="text-center text-white text-xl flex-grow">سامانه پرسنلی واگن پارس</h1>
-        <img class="max-w-[90px] h-auto mr-4" src="/public/logo/white-wp.png" alt="wp-logo">
-    </header>
-
-    <!-- Profile Section -->
-    <div class="container mx-auto mt-20 p-4">
-        <div class="bg-neutral-400 text-gray-100 p-4 rounded-lg flex items-center justify-end mb-4">
-            <div>
-                <h4 class="text-lg">نام کاربر</h4>
-                <p class="text-sm">شماره شناسایی: 123456</p>
-            </div>
-            <img class="w-16 h-16 rounded-full ml-4" src="/public/icons/usericon.png" alt="Profile Picture">
-        </div>
-
-        <!-- Info Bar -->
-        <div class="bg-gray-800 text-gray-100 p-2 rounded-lg flex items-center justify-between mb-4">
-            <div id="current-date">تاریخ امروز: 1402/10/26</div>
-            <div class="relative group">
-                
-                <button id="menu-btn" class="bg-white text-red-700 rounded-lg p-2 flex items-center justify-center">
-                    <img class="w-8 h-8" src="/public/icons/hamburgerbtn.png" alt="Items">
-                </button>
-
-                <ul id="menu"
-                    class="hidden mt-2 absolute right-0 bg-neutral-400 text-gray-800 rounded-lg shadow-lg p-2 w-40">
-                    <li class="flex items-center">
-                        <a class="block w-full px-4 py-2 hover:text-red-500" href="#">تغییر رمز عبور</a>
-                    </li>
-                </ul>
-
-            </div>
-        </div>
-
-        <!-- Main Buttons -->
-        <div class="flex flex-col items-center space-y-4" dir="rtl">
-            <!-- Generic Button Class -->
-            <button class="btn-main" onclick="location.href='https://ets.mapnawagonpars.com/'">
-                <span>کارت ساعت (ETS)</span>
-                <img class="w-8 h-8 ml-2" src="/public/icons/time-tracking.png" alt="ETS Icon">
-            </button>
-
-            <button class="btn-main" onclick="location.href='fr_pishnahad.html'">
-                <span>نظام پیشنهادات</span>
-                <img class="w-8 h-8 ml-2" src="/public/icons/suggestion.png" alt="Suggestions Icon">
-            </button>
-
-            <button class="btn-main" onclick="location.href='fr_rep_nfs_pers.html'">
-                <span>نفرساعت جذب شده</span>
-                <img class="w-8 h-8 ml-2" src="/public/icons/time-management.png" alt="Hours Icon">
-            </button>
-
-            <button class="btn-main" onclick="location.href='fr_fish.html'">
-                <span>فیش حقوقی</span>
-                <img class="w-8 h-8 ml-2" src="/public/icons/checking.png" alt="Salary Icon">
-            </button>
-
-            <button class="btn-main" onclick="location.href='fr_kasr.html'">
-                <span>گواهی کسر از حقوق</span>
-                <img class="w-8 h-8 ml-2" src="/public/icons/time-tracking.png" alt="#">
-            </button>
-
-            <button class="btn-main" onclick="location.href='fr_niaz.html'">
-                <span>نیاز سنجی</span>
-                <img class="w-8 h-8 ml-2" src="/public/icons/employees.png" alt="Insurance Icon">
-            </button>
-
-            <button class="btn-main" onclick="location.href='fr_mosaede.html'">
-                <span>درخواست مساعده</span>
-                <img class="w-8 h-8 ml-2" src="/public/icons/hand.png" alt="Request Icon">
-            </button>
-
-            <button class="btn-main" onclick="location.href='fr_car.html'">
-                <span>درخواست خودرو</span>
-                <img class="w-8 h-8 ml-2" src="/public/icons/sedan.png" alt="Car Icon">
-            </button>
-
-            <button class="btn-main" onclick="location.href='fr_guest.html'">
-                <span>فرم مهمان</span>
-                <img class="w-8 h-8 ml-2" src="/public/icons/contact-list.png" alt="Guest Icon">
-            </button>
-
-            <button class="btn-main" onclick="location.href='fr_exam.html'">
-                <span>شرکت در آزمون</span>
-                <img class="w-8 h-8 ml-2" src="/public/icons/exam.png" alt="Exam Icon">
-            </button>
-        </div>
-
-        <!-- Footer -->
-        <footer class="bg-gray-800 text-gray-100 text-center py-4 mt-4 rounded-lg">
-            <p>&copy; 2024 سیستم مدیریت پرسنل واگن پارس مپنا</p>
-        </footer>
-    </div>
-
-    <style>
-        .btn-main {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            background-color: white;
-            color: #d31010;
-            border: 1px solid #b71c1c;
-            transition: all 0.2s ease-in-out;
-        }
-
-        .btn-main:hover {
-            background-color: #b71c1c;
-            color: white;
-        }
-    </style>
-
-    <script>
-        // For shadow effect under the header after scrolling
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 0) {
-                header.classList.add('shadow-lg');
-            } else {
-                header.classList.remove('shadow-lg');
-            }
-        });
-
-        // گرفتن اطلاعات از سرور
-        $.get('/user-info', function (data) {
-            $('#userName').text(data.name);
-            $('#userId').text('شماره شناسایی: ' + data.id);
-            $('#current-date').text('تاریخ امروز: ' + data.currentDate);
-        });
-
-        // Hamburger Menu Toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const menu = document.getElementById('menu');
-
-        menuBtn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    </script>
-
-</body>
 
 <!DOCTYPE html>
 <html lang="fa">
@@ -262,48 +92,44 @@
     </div>
 
     <script>
-        // تبدیل اعداد فارسی به انگلیسی
-        function convertToEnglishNumbers(input) {
-            const persianNumbers = [/۰/g, /۱/g, /۲/g, /۳/g, /۴/g, /۵/g, /۶/g, /۷/g, /۸/g, /۹/g];
-            let englishInput = input;
-            for (let i = 0; i < 10; i++) {
-                englishInput = englishInput.replace(persianNumbers[i], i.toString());
+        $(document).ready(function () {
+            // تبدیل اعداد فارسی به انگلیسی
+            function convertToEnglishNumbers(input) {
+                const persianNumbers = [/۰/g, /۱/g, /۲/g, /۳/g, /۴/g, /۵/g, /۶/g, /۷/g, /۸/g, /۹/g];
+                let englishInput = input;
+                for (let i = 0; i < 10; i++) {
+                    englishInput = englishInput.replace(persianNumbers[i], i.toString());
+                }
+                return englishInput.replace(/[^0-9]/g, ''); // حذف کاراکترهای غیرعددی
             }
-            return englishInput.replace(/[^0-9]/g, ''); // حذف کاراکترهای غیرعددی
-        }
-
-        // بررسی ورودی کد شناسایی
-        document.getElementById('userId').addEventListener('input', function (e) {
-            const input = e.target.value;
-            e.target.value = convertToEnglishNumbers(input);
+    
+            // بررسی ورودی کد شناسایی و رمز عبور
+            $('#userId, #password').on('input', function () {
+                const input = $(this).val();
+                $(this).val(convertToEnglishNumbers(input));
+            });
+    
+            // نمایش صفحه دوم بعد از چند ثانیه با انیمیشن
+            setTimeout(function () {
+                $('#splash').addClass('hidden');
+                const loginForm = $('#login-form');
+                loginForm.removeClass('hidden').addClass('fade-in');
+            }, 3000);
+    
+            // دکمه ورود
+            $('#enterButton').on('click', function () {
+                const userId = $('#userId').val();
+                const password = $('#password').val();
+    
+                if (!userId || !password) {
+                    alert('لطفاً کد شناسایی و رمز عبور را وارد کنید.');
+                    return;
+                }
+    
+                window.location.href = 'fr_menu.html';
+            });
         });
-
-        // بررسی ورودی رمز عبور
-        document.getElementById('password').addEventListener('input', function (e) {
-            const input = e.target.value;
-            e.target.value = convertToEnglishNumbers(input);
-        });
-
-        // نمایش صفحه دوم بعد از چند ثانیه با انیمیشن
-        setTimeout(() => {
-            document.getElementById('splash').classList.add('hidden');
-            const loginForm = document.getElementById('login-form');
-            loginForm.classList.remove('hidden');
-            loginForm.classList.add('fade-in');
-        }, 3000);
-
-        // دکمه ورود
-        function enterApp() {
-            const userId = document.getElementById('userId').value;
-            const password = document.getElementById('password').value;
-
-            if (!userId || !password) {
-                alert('لطفاً کد شناسایی و رمز عبور را وارد کنید.');
-                return;
-            }
-
-            window.location.href = 'fr_menu.html';
-        }
     </script>
+    
 </body>
 </html>
