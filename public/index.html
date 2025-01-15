@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="fa">
 
@@ -169,4 +170,148 @@
 
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>واگن پارس</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @layer base {
+            @font-face {
+                font-family: 'fnt';
+                src: url('/public/fonts/IRANSansWeb(FaNum).woff');
+            }
+
+            @font-face {
+                font-family: 'b-fnt';
+                src: url('/public/fonts/IRANSansWeb(FaNum)_Bold.woff');
+            }
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'b-fnt', sans-serif;
+        }
+
+
+        @media (max-width: 640px) {
+            .bg-mobile-right {
+                background-image: url('/pic/7.jpg'), url('/pic/5.jpg');
+                background-position:  top, 3 bottom;
+                /* 
+       30px از چپ برای بک‌گراند اول
+       calc(100% - 40px) برای بک‌گراند دوم، که 40px از راست فاصله دارد
+    */
+                background-size: cover, auto;
+                /* تنظیم اندازه برای هر بک‌گراند */
+            }
+        }
+
+
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="h-screen w-screen bg-gray-900">
+
+    <!-- صفحه اول -->
+    <div id="splash" class="relative h-full w-full">
+        <div class="absolute inset-0 bg-cover bg-center bg-mobile-right z-0"
+            style="background-image: url('/pic/7.jpg');"></div>
+        <div class="absolute inset-0 bg-red-800 bg-opacity-80 z-10"></div>
+        <div class="relative z-20 flex items-center justify-center h-full">
+            <img src="/public/logo/white-wp.png" alt="لوگو وگن پارس" class="w-40 animate-pulse">
+        </div>
+    </div>
+
+    <!-- صفحه دوم -->
+    <div id="login-form" class="hidden relative h-full w-full fade-in">
+        <div class="absolute inset-0 bg-cover bg-center bg-mobile-right z-0"
+            style="background-image: url('/pic/5.jpg');"></div>
+        <div class="absolute inset-0 bg-red-800 bg-opacity-70 z-10"></div>
+        <div class="relative z-20 flex flex-col items-center justify-center h-full space-y-4">
+            <div class="mb-6">
+                <img src="/public/logo/white-wp.png" alt="لوگو وگن پارس" class="w-32">
+            </div>
+            <h2 class="text-white text-2xl font-bold">ورود</h2>
+            <input type="text" id="userId" placeholder="کد شناسایی" autocomplete="off"
+                class="w-64 p-2 text-center rounded bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500">
+            <input type="password" id="password" placeholder="رمز عبور" autocomplete="off"
+                class="w-64 p-2 text-center rounded bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500">
+            <button onclick="enterApp()"
+                class="w-64 py-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded focus:outline-none focus:ring-2 focus:ring-red-500">
+                ورود
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // تبدیل اعداد فارسی به انگلیسی
+        function convertToEnglishNumbers(input) {
+            const persianNumbers = [/۰/g, /۱/g, /۲/g, /۳/g, /۴/g, /۵/g, /۶/g, /۷/g, /۸/g, /۹/g];
+            let englishInput = input;
+            for (let i = 0; i < 10; i++) {
+                englishInput = englishInput.replace(persianNumbers[i], i.toString());
+            }
+            return englishInput.replace(/[^0-9]/g, ''); // حذف کاراکترهای غیرعددی
+        }
+
+        // بررسی ورودی کد شناسایی
+        document.getElementById('userId').addEventListener('input', function (e) {
+            const input = e.target.value;
+            e.target.value = convertToEnglishNumbers(input);
+        });
+
+        // بررسی ورودی رمز عبور
+        document.getElementById('password').addEventListener('input', function (e) {
+            const input = e.target.value;
+            e.target.value = convertToEnglishNumbers(input);
+        });
+
+        // نمایش صفحه دوم بعد از چند ثانیه با انیمیشن
+        setTimeout(() => {
+            document.getElementById('splash').classList.add('hidden');
+            const loginForm = document.getElementById('login-form');
+            loginForm.classList.remove('hidden');
+            loginForm.classList.add('fade-in');
+        }, 3000);
+
+        // دکمه ورود
+        function enterApp() {
+            const userId = document.getElementById('userId').value;
+            const password = document.getElementById('password').value;
+
+            if (!userId || !password) {
+                alert('لطفاً کد شناسایی و رمز عبور را وارد کنید.');
+                return;
+            }
+
+            window.location.href = 'fr_menu.html';
+        }
+    </script>
+</body>
+
+>>>>>>> 3bf01a3edc8fb8ff8f0355c3f8817f594c0d7428
 </html>
